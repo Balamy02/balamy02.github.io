@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmed Balamy | Tech Support Advisor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-in-out',
+                        'float': 'float 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s ease;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .dark .skill-card:hover {
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #3b82f6;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .dark .nav-link::after {
+            background-color: #60a5fa;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: #3b82f6;
+            margin: 10px 0 20px;
+        }
+        
+        .dark .section-title::after {
+            background-color: #60a5fa;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background-color: #e5e7eb;
+        }
+        
+        .dark .timeline-item::before {
+            background-color: #4b5563;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: -26px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #3b82f6;
+        }
+        
+        .dark .timeline-dot {
+            background-color: #60a5fa;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <!-- Header/Navigation -->
+    <header class="fixed w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-blue-600 dark:text-blue-400">Ahmed Balamy</a>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
+                    <i class="fas fa-moon dark:hidden"></i>
+                    <i class="fas fa-sun hidden dark:block"></i>
+                </button>
+                <button class="md:hidden" id="mobile-menu-button">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 shadow-lg">
+            <div class="container mx-auto px-6 py-4 flex flex-col space-y-4">
+                <a href="#home" class="nav-link py-2">Home</a>
+                <a href="#about" class="nav-link py-2">About</a>
+                <a href="#skills" class="nav-link py-2">Skills</a>
+                <a href="#experience" class="nav-link py-2">Experience</a>
+                <a href="#contact" class="nav-link py-2">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-20">
+        <div class="container mx-auto px-6 py-20 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-12 md:mb-0 animate-fade-in">
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-4">
+    Hi, I'm <span class="bg-gradient-to-r from-blue-600 via-purple-500 to-pink-400 text-transparent bg-clip-text animate-pulse">Ahmed <span style="font-family: 'Brush Script MT', cursive; font-size:1.2em; letter-spacing:0.05em;">Balamy</span> <span class="text-2xl align-super">✨</span></span>
+</h1>
+                <h2 class="text-2xl md:text-3xl font-semibold mb-6">Tech Problem Solver & Support Specialist</h2>
+                <p class="text-lg md:text-xl mb-8 text-gray-600 dark:text-gray-300 max-w-lg">
+                    I turn tech frustrations into solutions with a blend of technical expertise and human understanding. 
+                    Think of me as your digital detective - analyzing, troubleshooting, and explaining technology in ways that actually make sense.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#contact" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors">
+                        Contact Me
+                    </a>
+                    <a href="#" class="px-6 py-3 border border-blue-600 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-800 rounded-lg font-medium transition-colors">
+                        Download Resume
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center animate-float">
+                <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center">
+                    <div class="absolute inset-0 rounded-full bg-blue-400 opacity-20 animate-ping"></div>
+                    <i class="fas fa-laptop-code text-white text-6xl md:text-8xl"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-100 dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 section-title">About Me</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="animate-fade-in">
+                    <p class="text-lg mb-6">
+                        I'm a dedicated Tech Support Advisor currently working with a top-tier tech ecosystem through TP. 
+                        My journey in technology began with my training at ALX, where I developed a strong foundation in 
+                        software engineering principles and problem-solving techniques.
+                    </p>
+                    <p class="text-lg mb-6">
+                        What drives me is the satisfaction of helping users overcome technical challenges. I thrive in 
+                        fast-paced environments where I can apply my adaptability, curiosity, and communication skills to 
+                        deliver clear solutions to complex problems.
+                    </p>
+                    <p class="text-lg">
+                        Based in Casablanca, Morocco, I'm constantly expanding my technical knowledge while maintaining 
+                        a user-focused approach to support. My goal is to make technology accessible and frustration-free 
+                        for everyone I assist.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 gap-4 animate-fade-in">
+                    <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                        <div class="text-blue-600 dark:text-blue-400 text-4xl mb-4">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2">User-Centric</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Focused on delivering solutions that make sense to users</p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                        <div class="text-blue-600 dark:text-blue-400 text-4xl mb-4">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2">Problem Solver</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Analytical approach to troubleshooting</p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                        <div class="text-blue-600 dark:text-blue-400 text-4xl mb-4">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2">Communicator</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Clear explanations for technical concepts</p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                        <div class="text-blue-600 dark:text-blue-400 text-4xl mb-4">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2">Fast Learner</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Quick to adapt to new technologies</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 section-title">My Problem-Solving Toolkit</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Technical Skills -->
+                <div class="skill-card bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md transition-all duration-300">
+                    <div class="text-blue-600 dark:text-blue-400 text-3xl mb-3">
+                        <i class="fas fa-terminal"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Technical Support</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm">Diagnosing and resolving hardware/software issues</p>
+                </div>
+                
+                <div class="skill-card bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md transition-all duration-300">
+                    <div class="text-blue-600 dark:text-blue-400 text-3xl mb-3">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Customer Service</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm">Exceptional support with patience and clarity</p>
+                </div>
+                
+                <div class="skill-card bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md transition-all duration-300">
+                    <div class="text-blue-600 dark:text-blue-400 text-3xl mb-3">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Problem Solving</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm">Methodical approach to troubleshooting</p>
+                </div>
+                
+                <div class="skill-card bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md transition-all duration-300">
+                    <div class="text-blue-600 dark:text-blue-400 text-3xl mb-3">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Command Line</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm">Proficient with Linux/Unix command line tools</p>
+                </div>
+                
+                <div class="skill-card bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md transition-all duration-300">
+                    <div class="text-blue-600 dark:text-blue-400 text-3xl mb-3">
+                        <i class="fas fa-users-between-lines"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Teamwork</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm">Collaborating effectively in tech environments</p>
+                </div>
+                
+                <div class="skill-card bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md transition-all duration-300">
+                    <div class="text-blue-600 dark:text-blue-400 text-3xl mb-3">
+                        <i class="fas fa-file-code"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Basic Scripting</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm">Automating simple tasks with scripts</p>
+                </div>
+                
+                <div class="skill-card bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md transition-all duration-300">
+                    <div class="text-blue-600 dark:text-blue-400 text-3xl mb-3">
+                        <i class="fab fa-linux"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Linux Systems</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm">Working with Linux environments</p>
+                </div>
+                
+                <div class="skill-card bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md transition-all duration-300">
+                    <div class="text-blue-600 dark:text-blue-400 text-3xl mb-3">
+                        <i class="fas fa-comment-dots"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Technical Communication</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm">Translating tech concepts for users</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-100 dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 section-title">Experience & Education</h2>
+            
+            <div class="max-w-3xl mx-auto">
+                <!-- Current Job -->
+                <div class="relative pl-8 mb-12 timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                            <h3 class="text-xl font-bold">Tech Support Advisor</h3>
+                            <span class="text-blue-600 dark:text-blue-400 font-medium">2023 - Present</span>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">TP (Top-tier Tech Ecosystem)</h4>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Providing technical support for a leading tech ecosystem, troubleshooting complex issues, 
+                            and delivering clear solutions to users. Working in a fast-paced environment that demands 
+                            quick thinking and adaptability.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full text-sm">Technical Support</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full text-sm">Problem Solving</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full text-sm">Customer Service</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- University Degree -->
+                <div class="relative pl-8 mb-12 timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                            <h3 class="text-xl font-bold">Bachelor's Degree in Management</h3>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">University</h4>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Completed a comprehensive 3-year program in management, gaining expertise in business operations,
+                            organizational behavior, and strategic planning. Developed strong analytical and decision-making
+                            skills applicable to technical support environments.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full text-sm">Business Management</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full text-sm">Strategic Planning</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full text-sm">Organizational Behavior</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Baccalaureate -->
+                <div class="relative pl-8 mb-12 timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                            <h3 class="text-xl font-bold">Baccalaureate</h3>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">High School</h4>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Graduated with highest honors (Mention Très Bien), demonstrating exceptional academic achievement.
+                            This rigorous program laid the foundation for critical thinking and problem-solving skills that
+                            continue to benefit my technical support career.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full text-sm">Highest Honors</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full text-sm">Academic Excellence</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full text-sm">Critical Thinking</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ALX Training -->
+                <div class="relative pl-8 mb-12 timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                            <h3 class="text-xl font-bold">Software Engineering Training</h3>
+                            <span class="text-blue-600 dark:text-blue-400 font-medium">2022 - 2023</span>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">ALX Africa</h4>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Completed intensive training in software engineering fundamentals, including problem-solving 
+                            methodologies, command-line tools, and basic scripting. Developed a strong foundation in 
+                            technical thinking and collaborative work.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full text-sm">Linux</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full text-sm">Command Line</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full text-sm">Problem Solving</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 section-title">Get In Touch</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="animate-fade-in">
+                    <h3 class="text-2xl font-semibold mb-6">Let's Connect</h3>
+                    <p class="text-lg mb-8 text-gray-600 dark:text-gray-300">
+                        Interested in discussing tech support opportunities or have questions about my experience? 
+                        Feel free to reach out through the form or connect with me on LinkedIn.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-blue-600 dark:text-blue-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Email</h4>
+                                <p class="text-gray-600 dark:text-gray-400">ahmedbalamypro@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-full mr-4">
+                                <i class="fab fa-linkedin-in text-blue-600 dark:text-blue-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">LinkedIn</h4>
+                                <a href="https://www.linkedin.com/in/ahmed-balamy10" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                                    linkedin.com/in/ahmed-balamy10
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-blue-600 dark:text-blue-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Location</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Casablanca, Morocco</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="animate-fade-in">
+                    <div class="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md text-center">
+    <div class="relative w-full h-56 mb-6 overflow-visible">
+        <div class="absolute left-1/2 top-2 -translate-x-1/2 flex flex-col items-center w-full">
+            <div class="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-400 animate-pulse drop-shadow-lg mb-1">
+    <i class="fas fa-user-astronaut text-blue-400 mr-2 animate-bounce"></i>Turning Curiosity Into Solutions! <i class="fas fa-rocket text-pink-400 ml-2 animate-pulse"></i>
+</div>
+            <div class="text-lg md:text-xl font-semibold text-blue-700 dark:text-blue-300 mb-2 animate-fade-in">
+    </div>
+</header>
+                                <i class="fab fa-linkedin-in mr-2"></i> LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 dark:bg-gray-800 py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-2xl font-bold text-blue-600 dark:text-blue-400">Ahmed Balamy</a>
+                    <p class="text-gray-600 dark:text-gray-400 mt-2">Tech Support Advisor</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="https://www.linkedin.com/in/ahmed-balamy10" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-xl">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/Balamy02" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors text-xl">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-200 dark:border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 dark:text-gray-500 text-sm mb-4 md:mb-0">
+                    &copy; <span id="year"></span> Ahmed Balamy. All rights reserved.
+                </p>
+                
+                <div class="flex space-x-6">
+                    <a href="#home" class="text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors text-sm">Home</a>
+                    <a href="#about" class="text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors text-sm">About</a>
+                    <a href="#skills" class="text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors text-sm">Skills</a>
+                    <a href="#experience" class="text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors text-sm">Experience</a>
+                    <a href="#contact" class="text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors text-sm">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        
+        // Check for saved theme preference or use system preference
+        const savedTheme = localStorage.getItem('theme') || 
+                          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        html.classList.add(savedTheme);
+        
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            const theme = html.classList.contains('dark') ? 'dark' : 'light';
+            localStorage.setItem('theme', theme);
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Animation on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.animate-fade-in');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                }
+            });
+        };
+        
+        // Set initial opacity for animated elements
+        document.querySelectorAll('.animate-fade-in').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transition = 'opacity 0.6s ease-out';
+        });
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
