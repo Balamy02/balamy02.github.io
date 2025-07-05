@@ -224,9 +224,7 @@
             <i class="fas fa-moon dark:hidden"></i>
             <i class="fas fa-sun hidden dark:block"></i>
         </button>
-        <button class="md:hidden" id="mobile-menu-button">
-            <i class="fas fa-bars text-xl"></i>
-        </button>
+        
     </div>
 </nav>
 <script>
@@ -261,33 +259,7 @@
         <a href="resume.html" class="nav-link py-4 text-lg w-full text-center" target="_blank">Resume</a>
     </div>
 </div>
-<script>
-// Improved mobile menu toggle: menu is hidden by default, overlays only on click, closes on link click
-(function() {
-    var mobileMenuButton = document.getElementById('mobile-menu-button');
-    var mobileMenu = document.getElementById('mobile-menu');
-    if (mobileMenuButton && mobileMenu) {
-        mobileMenuButton.addEventListener('click', function() {
-            mobileMenu.classList.toggle('hidden');
-            if (!mobileMenu.classList.contains('hidden')) {
-                mobileMenu.style.transform = 'translateY(0)';
-            } else {
-                mobileMenu.style.transform = 'translateY(100%)';
-            }
-        });
-        document.querySelectorAll('#mobile-menu a').forEach(function(link) {
-            link.addEventListener('click', function() {
-                mobileMenu.classList.add('hidden');
-                mobileMenu.style.transform = 'translateY(100%)';
-            });
-        });
-        window.addEventListener('DOMContentLoaded', function() {
-            mobileMenu.classList.add('hidden');
-            mobileMenu.style.transform = 'translateY(100%)';
-        });
-    }
-})();
-</script>
+
     </header>
 
     <!-- Hero Section -->
@@ -815,5 +787,54 @@
       lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     });
   </script>
+<noscript><div style="background:#fffae6;color:#b91c1c;padding:16px;text-align:center;position:fixed;top:0;left:0;width:100%;z-index:9999;">JavaScript is required for full site functionality. Please enable JS in your browser.</div></noscript>
+<script>
+// Navbar show/hide logic: only show full navbar at top, only theme/hamburger on scroll
+(function() {
+  try {
+    const navbarMain = document.getElementById('navbar-main');
+    let lastScrollY = window.scrollY;
+    function handleNavbar() {
+      if(window.scrollY <= 0) {
+        navbarMain.style.opacity = '1';
+        navbarMain.style.pointerEvents = 'auto';
+        navbarMain.style.transform = 'translateY(0)';
+      } else {
+        navbarMain.style.opacity = '0';
+        navbarMain.style.pointerEvents = 'none';
+        navbarMain.style.transform = 'translateY(-32px)';
+      }
+    }
+    window.addEventListener('scroll', handleNavbar);
+    window.addEventListener('load', handleNavbar);
+  } catch(e) { console.error('Navbar JS error:', e); }
+})();
+// Improved mobile menu toggle: menu is hidden by default, overlays only on click, closes on link click
+(function() {
+  try {
+    var mobileMenuButton = document.getElementById('mobile-menu-button');
+    var mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+        if (!mobileMenu.classList.contains('hidden')) {
+          mobileMenu.style.transform = 'translateY(0)';
+        } else {
+          mobileMenu.style.transform = 'translateY(100%)';
+        }
+      });
+      document.querySelectorAll('#mobile-menu a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          mobileMenu.classList.add('hidden');
+          mobileMenu.style.transform = 'translateY(100%)';
+        });
+      });
+      // On load, always hide menu
+      mobileMenu.classList.add('hidden');
+      mobileMenu.style.transform = 'translateY(100%)';
+    }
+  } catch(e) { console.error('Mobile menu JS error:', e); }
+})();
+</script>
 </body>
 </html>
