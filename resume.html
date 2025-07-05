@@ -105,7 +105,7 @@
     }
     .skill {
       background: #e0e7ff;
-      color: #3b5bdb;
+      color: #22223b;
       border-radius: 16px;
       padding: 7px 16px;
       font-size: 0.98rem;
@@ -114,7 +114,8 @@
       align-items: center;
       gap: 7px;
       box-shadow: 0 2px 10px rgba(60, 80, 180, 0.04);
-      transition: background 0.2s;
+      border: 1px solid #dbeafe;
+      transition: background 0.2s, color 0.2s;
     }
     .skill i { color: #4361ee; }
     .timeline {
@@ -172,6 +173,8 @@
       font-size: 0.92rem;
       font-weight: 500;
       display: inline-block;
+      border: 1px solid #99e9f2;
+      box-shadow: 0 1px 6px rgba(25,113,194,0.10);
     }
     .contact {
       display: flex;
@@ -247,8 +250,19 @@
         background: #22223b;
         box-shadow: 0 8px 32px rgba(60, 80, 180, 0.20);
       }
-      .section-title, .skill, .badge, .back-link, .contact a, .contact span {
+      .section-title, .back-link, .contact a, .contact span {
         color: #fff !important;
+      }
+      .skill {
+        background: #2d3569;
+        color: #fff;
+        border: 1px solid #3b5bdb;
+      }
+      .badge {
+        background: #4361ee;
+        color: #fff;
+        border: 1px solid #3b5bdb;
+        box-shadow: 0 1px 6px rgba(67,97,238,0.13);
       }
       .highlight-paragraph {
         background: linear-gradient(90deg, #3b5bdb 0%, #4361ee 100%);
