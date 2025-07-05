@@ -117,13 +117,106 @@
         .dark .timeline-dot {
             background-color: #60a5fa;
         }
-    </style>
+        .special-flashy {
+      background: linear-gradient(120deg, #2563eb 20%, #7c3aed 50%, #06b6d4 80%);
+      background-size: 200% auto;
+      color: #2563eb;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shine-special 2.2s linear infinite;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      transition: color 0.2s;
+    }
+    @keyframes shine-special {
+      0% {
+        background-position: 200% center;
+      }
+      100% {
+        background-position: 0% center;
+      }
+    }
+    @media (prefers-color-scheme: dark) {
+    }
+    /* Enhanced Navbar Animation */
+    .nav-link {
+      position: relative;
+      display: inline-block;
+      padding-bottom: 2px;
+      transition: color 0.2s, transform 0.2s;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; bottom: -2px;
+      height: 3px;
+      background: linear-gradient(90deg, #2563eb 20%, #7c3aed 50%, #06b6d4 80%);
+      border-radius: 2px;
+      transform: scaleX(0);
+      transition: transform 0.3s cubic-bezier(.4,2,.6,1);
+      z-index: 1;
+    }
+    .nav-link:hover, .nav-link:focus {
+      color: #2563eb !important;
+  vertical-align: middle;
+  animation: sparkle 1.3s infinite linear;
+}
+.nav-sparkle {
+  display: none;
+  font-size: 1.1em;
+  color: #06b6d4;
+  filter: drop-shadow(0 0 6px #7c3aed);
+}
+@keyframes sparkle {
+  0% { transform: scale(1) rotate(0deg); opacity: 1; }
+  50% { transform: scale(1.4) rotate(15deg); opacity: 0.7; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+@keyframes nav-bounce {
+  0% { transform: scale(1); }
+  35% { transform: scale(1.14); }
+  70% { transform: scale(0.96); }
+  100% { transform: scale(1); }
+}
+}
+.nav-link, .nav-link.active {
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  font-weight: 700;
+  color: inherit;
+  background: none;
+}
+.nav-link:hover, .nav-link:focus, .nav-link.active {
+  background: linear-gradient(90deg, #2563eb 20%, #7c3aed 50%, #06b6d4 80%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent !important;
+  filter: drop-shadow(0 0 8px #7c3aed80) drop-shadow(0 0 2px #06b6d4);
+  animation: nav-bounce 0.42s cubic-bezier(.4,2,.6,1);
+}
+  background: linear-gradient(90deg, #2563eb 20%, #7c3aed 50%, #06b6d4 80%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent !important;
+}
+      transform: scaleX(1);
+      background: linear-gradient(90deg, #06b6d4 10%, #7c3aed 60%, #2563eb 90%);
+    }
+      .special-flashy {
+        background: linear-gradient(120deg, #fff 10%, #7c3aed 50%, #06b6d4 90%);
+        color: #fff;
+      }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
 </head>
 <body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
     <!-- Header/Navigation -->
-    <header class="fixed w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm z-50 shadow-sm">
+    <header class="fixed w-full glass-navbar z-50 shadow-sm">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-blue-600 dark:text-blue-400">Ahmed Balamy</a>
+            <a href="#" class="text-2xl font-bold special-flashy">Ahmed Balamy</a>
             
             <div class="hidden md:flex space-x-8">
                 <a href="#home" class="nav-link">Home</a>
@@ -164,7 +257,7 @@
                 <h1 class="text-4xl md:text-6xl font-extrabold mb-4">
     Hi, I'm <span class="bg-gradient-to-r from-blue-600 via-purple-500 to-pink-400 text-transparent bg-clip-text animate-pulse">Ahmed <span style="font-family: 'Brush Script MT', cursive; font-size:1.2em; letter-spacing:0.05em;">Balamy</span> <span class="text-2xl align-super">✨</span></span>
 </h1>
-                <h2 class="text-2xl md:text-3xl font-semibold mb-6">Tech Problem Solver & Support Specialist</h2>
+                <h2 class="text-2xl md:text-3xl font-semibold mb-6">Tech Problem Solver</h2>
                 <p class="text-lg md:text-xl mb-8 text-gray-600 dark:text-gray-300 max-w-lg">
                     I turn tech frustrations into solutions with a blend of technical expertise and human understanding. 
                     Think of me as your digital detective - analyzing, troubleshooting, and explaining technology in ways that actually make sense.
@@ -260,12 +353,12 @@
                 </div>
                 
                 <div class="skill-card bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md transition-all duration-300">
-                    <div class="text-blue-600 dark:text-blue-400 text-3xl mb-3">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3 class="font-semibold text-lg mb-2">Customer Service</h3>
-                    <p class="text-gray-600 dark:text-gray-300 text-sm">Exceptional support with patience and clarity</p>
-                </div>
+    <div class="text-blue-600 dark:text-blue-400 text-3xl mb-3">
+        <i class="fas fa-brain"></i>
+    </div>
+    <h3 class="font-semibold text-lg mb-2">Analytical Thinking</h3>
+    <p class="text-gray-600 dark:text-gray-300 text-sm">Solving complex problems with logic and creativity</p>
+</div>
                 
                 <div class="skill-card bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md transition-all duration-300">
                     <div class="text-blue-600 dark:text-blue-400 text-3xl mb-3">
@@ -485,8 +578,8 @@
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-6 md:mb-0">
-                    <a href="#" class="text-2xl font-bold text-blue-600 dark:text-blue-400">Ahmed Balamy</a>
-                    <p class="text-gray-600 dark:text-gray-400 mt-2">Tech Support Advisor</p>
+                    <a href="#" class="text-2xl font-bold special-flashy">Ahmed Balamy</a>
+                    <p class="text-gray-600 dark:text-gray-400 mt-2 italic genius-quote">“Turning ideas into code, one pixel at a time.”</p>
                 </div>
                 
                 <div class="flex space-x-6">
@@ -603,5 +696,82 @@
     document.getElementById('cookie-notice').style.display = 'flex';
   }
 </script>
+  <script>
+    // Fade-in on scroll for all main sections
+    document.addEventListener('DOMContentLoaded', function() {
+      const animatedSections = document.querySelectorAll('section');
+      animatedSections.forEach(section => {
+        section.classList.add('opacity-0', 'translate-y-8', 'transition-all', 'duration-700');
+      });
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('opacity-100', 'translate-y-0');
+            entry.target.classList.remove('opacity-0', 'translate-y-8');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      animatedSections.forEach(section => {
+        observer.observe(section);
+      });
+    });
+  </script>
+  <script>
+    // Fade-in on scroll for all main sections
+    document.addEventListener('DOMContentLoaded', function() {
+      const animatedSections = document.querySelectorAll('section');
+      animatedSections.forEach(section => {
+        section.classList.add('opacity-0', 'translate-y-8', 'transition-all', 'duration-700');
+      });
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('opacity-100', 'translate-y-0');
+            entry.target.classList.remove('opacity-0', 'translate-y-8');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      animatedSections.forEach(section => {
+        observer.observe(section);
+      });
+
+      // Navbar active link highlight on scroll
+      const navLinks = document.querySelectorAll('.nav-link');
+      const sectionIds = Array.from(navLinks).map(link => link.getAttribute('href')).filter(href => href.startsWith('#'));
+      const sectionElements = sectionIds.map(id => document.querySelector(id));
+      function setActiveLink() {
+        let scrollPos = window.scrollY + 120;
+        let activeIdx = 0;
+        sectionElements.forEach((section, i) => {
+          if (section && section.offsetTop <= scrollPos) {
+            activeIdx = i;
+          }
+        });
+        navLinks.forEach((link, i) => {
+          link.classList.toggle('active', i === activeIdx);
+        });
+      }
+      window.addEventListener('scroll', setActiveLink);
+      setActiveLink();
+    });
+  </script>
+  <script>
+    // Hide navbar on scroll down, show on scroll up
+    let lastScrollTop = 0;
+    const navbar = document.querySelector('header');
+    window.addEventListener('scroll', function() {
+      let scrollTop = window.scrollY || document.documentElement.scrollTop;
+      if(scrollTop > lastScrollTop && scrollTop > 80) {
+        navbar.style.transform = 'translateY(-120%)';
+        navbar.style.transition = 'transform 0.4s cubic-bezier(.4,2,.6,1)';
+      } else {
+        navbar.style.transform = 'translateY(0)';
+        navbar.style.transition = 'transform 0.4s cubic-bezier(.4,2,.6,1)';
+      }
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
+  </script>
 </body>
 </html>
