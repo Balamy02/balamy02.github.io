@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ahmed Balamy – CV Créatif</title>
+  <title>Ahmed Balamy – Creative Resume</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
@@ -46,10 +46,25 @@
     }
     h1 {
       text-align: center;
-      color: #3b5bdb;
       font-size: 2.5rem;
       margin-bottom: 8px;
       letter-spacing: 1px;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: linear-gradient(120deg, #3b5bdb 30%, #fff 50%, #3b5bdb 70%);
+      background-size: 200% auto;
+      color: #3b5bdb;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shine 2.2s linear infinite;
+    }
+    @keyframes shine {
+      0% {
+        background-position: 200% center;
+      }
+      100% {
+        background-position: 0% center;
+      }
     }
     .subtitle {
       text-align: center;
@@ -212,88 +227,126 @@
       h1 { font-size: 1.3rem; }
       .section { margin-top: 20px; }
     }
+    .highlight-paragraph {
+      background: linear-gradient(90deg, #ffe066 0%, #ffd6e0 100%);
+      color: #22223b;
+      border-radius: 14px;
+      padding: 14px 18px;
+      margin-bottom: 12px;
+      font-size: 1.08rem;
+      box-shadow: 0 2px 14px rgba(255,224,102,0.10);
+      font-weight: 500;
+      transition: background 0.3s, color 0.3s;
+    }
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: linear-gradient(120deg, #232946 0%, #3b5bdb 100%);
+        color: #f4f4f8;
+      }
+      .cv-container {
+        background: #22223b;
+        box-shadow: 0 8px 32px rgba(60, 80, 180, 0.20);
+      }
+      .section-title, .skill, .badge, .back-link, .contact a, .contact span {
+        color: #fff !important;
+      }
+      .highlight-paragraph {
+        background: linear-gradient(90deg, #3b5bdb 0%, #4361ee 100%);
+        color: #fff;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="cv-container">
-    <img src="cv.jpg" alt="Photo Ahmed Balamy" class="cv-img" />
     <h1>Ahmed Balamy</h1>
-    <div class="subtitle">Conseiller Support Technique & Résolveur de Problèmes Digitaux</div>
+    <div class="subtitle">Creative, Analytical, and Driven</div>
 
     <div class="section">
-      <div class="section-title"><i class="fas fa-user"></i> Profil</div>
-      <div class="profile">
-        Je transforme les frustrations technologiques en solutions concrètes. Grâce à une expertise technique solide, un sens de l'écoute et une communication claire, j'accompagne particuliers et entreprises dans la résolution de leurs défis numériques. Mon approche : détective, pédagogue et facilitateur.
+      <div class="section-title"><i class="fas fa-user"></i> Profile</div>
+      <div class="profile highlight-paragraph">
+        I am passionate about solving complex problems, learning new technologies, and making a positive impact through clear communication and creative thinking. My approach is rooted in curiosity, adaptability, and a drive for excellence.
       </div>
     </div>
 
     <div class="section">
-      <div class="section-title"><i class="fas fa-toolbox"></i> Compétences</div>
+      <div class="section-title"><i class="fas fa-toolbox"></i> Key Skills</div>
       <div class="skills">
-        <span class="skill"><i class="fas fa-terminal"></i>Support technique</span>
-        <span class="skill"><i class="fas fa-users"></i>Service client</span>
-        <span class="skill"><i class="fas fa-tasks"></i>Résolution de problèmes</span>
-        <span class="skill"><i class="fab fa-linux"></i>Linux & CLI</span>
-        <span class="skill"><i class="fas fa-comment-dots"></i>Communication technique</span>
-        <span class="skill"><i class="fas fa-users-between-lines"></i>Travail en équipe</span>
-        <span class="skill"><i class="fas fa-file-code"></i>Scripting</span>
+        <span class="skill"><i class="fas fa-lightbulb"></i>Problem Solving</span>
+        <span class="skill"><i class="fas fa-users"></i>Collaboration</span>
+        <span class="skill"><i class="fas fa-code"></i>Linux & CLI</span>
+        <span class="skill"><i class="fas fa-comments"></i>Technical Communication</span>
+        <span class="skill"><i class="fas fa-file-code"></i>Scripting & Automation</span>
+        <span class="skill"><i class="fas fa-graduation-cap"></i>Continuous Learning</span>
       </div>
     </div>
 
     <div class="section">
-      <div class="section-title"><i class="fas fa-briefcase"></i> Expérience</div>
+      <div class="section-title"><i class="fas fa-briefcase"></i> Experience</div>
       <div class="timeline">
         <div class="exp-block">
-          <div class="exp-title"><i class="fas fa-building"></i> Conseiller Support Technique</div>
-          <div class="exp-meta">TP (Top-tier Tech Ecosystem) | 2024 – Présent</div>
-          <div class="exp-desc">
-            Support technique pour un écosystème technologique de pointe : résolution de problèmes complexes, accompagnement des utilisateurs, communication claire et efficace. Reconnu pour mon adaptabilité, ma curiosité et mon approche centrée sur l'utilisateur.
+          <div class="exp-title"><i class="fas fa-building"></i> Technology & Problem-Solving Roles</div>
+          <div class="exp-meta">Top-tier Tech Ecosystem | 2024 – Present</div>
+          <div class="exp-desc highlight-paragraph">
+            Tackling challenging projects, collaborating with diverse teams, and delivering innovative solutions in a fast-paced environment. Recognized for adaptability, curiosity, and a user-focused mindset.
           </div>
           <div class="badges">
-            <span class="badge">Support Technique</span>
-            <span class="badge">Résolution de Problèmes</span>
-            <span class="badge">Service Client</span>
+            <span class="badge">Innovation</span>
+            <span class="badge">Teamwork</span>
+            <span class="badge">Creative Thinking</span>
           </div>
         </div>
       </div>
     </div>
 
     <div class="section">
-      <div class="section-title"><i class="fas fa-graduation-cap"></i> Formation</div>
+      <div class="section-title"><i class="fas fa-graduation-cap"></i> Education</div>
       <div class="timeline">
         <div class="exp-block">
-          <div class="exp-title"><i class="fas fa-laptop-code"></i> Formation en Ingénierie Logicielle</div>
+          <div class="exp-title"><i class="fas fa-laptop-code"></i> Software Engineering Training</div>
           <div class="exp-meta">ALX Africa | 2022 – 2023</div>
-          <div class="exp-desc">
-            Formation intensive en fondamentaux du développement logiciel, résolution de problèmes, Linux et outils en ligne de commande. Développement de l'esprit critique et capacité d'apprentissage rapide.
+          <div class="exp-desc highlight-paragraph">
+            Completed intensive training in software engineering fundamentals, problem-solving, Linux, and command line tools. Developed critical thinking and the ability to learn rapidly in new technical domains.
           </div>
           <div class="badges">
             <span class="badge">Linux</span>
             <span class="badge">CLI</span>
-            <span class="badge">Résolution de Problèmes</span>
+            <span class="badge">Problem Solving</span>
           </div>
         </div>
         <div class="exp-block">
-          <div class="exp-title"><i class="fas fa-university"></i> Baccalauréat</div>
-          <div class="exp-meta">Mention Très Bien</div>
-          <div class="exp-desc">
-            Excellence académique, mention « Très Bien ». Acquisition de solides bases en réflexion critique et résolution de problèmes.
+          <div class="exp-title"><i class="fas fa-user-graduate"></i> Three-Year University Degree in Management</div>
+          <div class="exp-desc highlight-paragraph">
+            Completed a three-year university degree in Management, developing strong analytical, organizational, and leadership skills. Gained a solid understanding of business strategy, project management, and effective decision-making.
+          </div>
+          <div class="badges">
+            <span class="badge">Management</span>
+            <span class="badge">Business Strategy</span>
+            <span class="badge">Leadership</span>
+            <span class="badge">Project Management</span>
+          </div>
+        </div>
+        <div class="exp-block">
+          <div class="exp-title"><i class="fas fa-university"></i> Baccalaureate</div>
+          <div class="exp-meta">Highest Honors</div>
+          <div class="exp-desc highlight-paragraph">
+            Graduated with highest honors, demonstrating academic excellence and a strong foundation in critical thinking and analysis.
           </div>
           <div class="badges">
             <span class="badge">Excellence</span>
-            <span class="badge">Mention Très Bien</span>
-            <span class="badge">Pensée Critique</span>
+            <span class="badge">Highest Honors</span>
+            <span class="badge">Critical Thinking</span>
           </div>
         </div>
       </div>
     </div>
 
     <div class="section">
-      <div class="section-title"><i class="fas fa-language"></i> Langues</div>
+      <div class="section-title"><i class="fas fa-language"></i> Languages</div>
       <div class="skills">
-        <span class="skill"><i class="fas fa-globe"></i>Français (professionnel)</span>
-        <span class="skill"><i class="fas fa-globe"></i>Anglais (professionnel)</span>
-        <span class="skill"><i class="fas fa-globe"></i>Arabe (natif)</span>
+        <span class="skill"><i class="fas fa-globe"></i>English (Professional)</span>
+        <span class="skill"><i class="fas fa-globe"></i>French (Professional)</span>
+        <span class="skill"><i class="fas fa-globe"></i>Arabic (Native)</span>
       </div>
     </div>
 
@@ -306,8 +359,8 @@
       </div>
     </div>
 
-    <button class="pdf-btn" onclick="window.print()"><i class="fas fa-file-download"></i> Télécharger en PDF</button>
-    <a href="index.html" class="back-link">&larr; Retour au Portfolio</a>
+    <button class="pdf-btn" onclick="window.print()"><i class="fas fa-file-download"></i> Download as PDF</button>
+    <a href="index.html" class="back-link">&larr; Back to Portfolio</a>
   </div>
 </body>
 </html>
