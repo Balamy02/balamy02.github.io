@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahmed Balamy | Tech Support Advisor</title>
+    <title>Ahmed Balamy | Tech Problem Solver</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Analytics -->
@@ -209,26 +209,46 @@
     <!-- Header/Navigation -->
     <header class="fixed w-full glass-navbar z-50 shadow-sm pt-safe top-0 left-0">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold special-flashy">Ahmed Balamy</a>
-            
-            <div class="hidden md:flex space-x-8">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#experience" class="nav-link">Experience</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
-            
-            <div class="flex items-center space-x-4">
-                <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
-                    <i class="fas fa-moon dark:hidden"></i>
-                    <i class="fas fa-sun hidden dark:block"></i>
-                </button>
-                <button class="md:hidden" id="mobile-menu-button">
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
-            </div>
-        </nav>
+    <div id="navbar-main" class="flex items-center transition-all duration-500">
+        <a href="#" class="text-2xl font-bold special-flashy">Ahmed Balamy</a>
+        <div class="hidden md:flex space-x-8 ml-8">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+    </div>
+    <div class="flex items-center space-x-4">
+        <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
+            <i class="fas fa-moon dark:hidden"></i>
+            <i class="fas fa-sun hidden dark:block"></i>
+        </button>
+        <button class="md:hidden" id="mobile-menu-button">
+            <i class="fas fa-bars text-xl"></i>
+        </button>
+    </div>
+</nav>
+<script>
+// Navbar show/hide logic: only show full navbar at top, only theme/hamburger on scroll
+(function() {
+  const navbarMain = document.getElementById('navbar-main');
+  let lastScrollY = window.scrollY;
+  function handleNavbar() {
+    if(window.scrollY <= 0) {
+      navbarMain.style.opacity = '1';
+      navbarMain.style.pointerEvents = 'auto';
+      navbarMain.style.transform = 'translateY(0)';
+    } else {
+      navbarMain.style.opacity = '0';
+      navbarMain.style.pointerEvents = 'none';
+      navbarMain.style.transform = 'translateY(-32px)';
+    }
+  }
+  window.addEventListener('scroll', handleNavbar);
+  window.addEventListener('load', handleNavbar);
+})();
+</script>
         
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="fixed inset-0 z-40 bg-white/95 dark:bg-gray-900/95 shadow-lg flex flex-col md:hidden transition-transform duration-300 transform translate-y-0 pt-safe pb-safe px-4 space-y-2 overflow-y-auto">
@@ -281,7 +301,7 @@
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div class="animate-fade-in">
                     <p class="text-lg mb-6">
-                        I'm a dedicated Tech Support Advisor currently working with a top-tier tech ecosystem through TP. 
+                        I'm a dedicated Tech Problem Solver currently working with a top-tier tech ecosystem through TP. 
                         My journey in technology began with my training at ALX, where I developed a strong foundation in 
                         software engineering principles and problem-solving techniques.
                     </p>
@@ -415,8 +435,8 @@
                     <div class="timeline-dot"></div>
                     <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
                         <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
-                            <h3 class="text-xl font-bold">Tech Support Advisor</h3>
-                            <span class="text-blue-600 dark:text-blue-400 font-medium">2023 - Present</span>
+                            <h3 class="text-xl font-bold">Tech Problem Solver</h3>
+                            <span class="text-blue-600 dark:text-blue-400 font-medium">2024 – Present</span>
                         </div>
                         <h4 class="text-lg font-semibold mb-2">TP (Top-tier Tech Ecosystem)</h4>
                         <p class="text-gray-600 dark:text-gray-300 mb-4">
@@ -438,6 +458,7 @@
                     <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
                         <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
                             <h3 class="text-xl font-bold">Bachelor's Degree in Management</h3>
+<span class="text-blue-600 dark:text-blue-400 font-medium">2023</span>
                         </div>
                         <h4 class="text-lg font-semibold mb-2">University</h4>
                         <p class="text-gray-600 dark:text-gray-300 mb-4">
@@ -453,34 +474,13 @@
                     </div>
                 </div>
 
-                <!-- Baccalaureate -->
-                <div class="relative pl-8 mb-12 timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
-                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
-                            <h3 class="text-xl font-bold">Baccalaureate</h3>
-                        </div>
-                        <h4 class="text-lg font-semibold mb-2">High School</h4>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">
-                            Graduated with highest honors (Mention Très Bien), demonstrating exceptional academic achievement.
-                            This rigorous program laid the foundation for critical thinking and problem-solving skills that
-                            continue to benefit my technical support career.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full text-sm">Highest Honors</span>
-                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full text-sm">Academic Excellence</span>
-                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full text-sm">Critical Thinking</span>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- ALX Training -->
                 <div class="relative pl-8 mb-12 timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
                         <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
                             <h3 class="text-xl font-bold">Software Engineering Training</h3>
-                            <span class="text-blue-600 dark:text-blue-400 font-medium">2022 - 2023</span>
+                            <span class="text-blue-600 dark:text-blue-400 font-medium">2022 – 2023</span>
                         </div>
                         <h4 class="text-lg font-semibold mb-2">ALX Africa</h4>
                         <p class="text-gray-600 dark:text-gray-300 mb-4">
@@ -492,6 +492,28 @@
                             <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full text-sm">Linux</span>
                             <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full text-sm">Command Line</span>
                             <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full text-sm">Problem Solving</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Baccalaureate -->
+                <div class="relative pl-8 mb-12 timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                            <h3 class="text-xl font-bold">Baccalaureate</h3>
+<span class="text-blue-600 dark:text-blue-400 font-medium">2020 – Highest Honors</span>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">High School</h4>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Graduated with highest honors (Mention Très Bien), demonstrating exceptional academic achievement.
+                            This rigorous program laid the foundation for critical thinking and problem-solving skills that
+                            continue to benefit my technical support career.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full text-sm">Highest Honors</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full text-sm">Academic Excellence</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full text-sm">Critical Thinking</span>
                         </div>
                     </div>
                 </div>
