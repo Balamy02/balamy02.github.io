@@ -6,6 +6,14 @@
     <title>Ahmed Balamy | Tech Support Advisor</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MT4KMLTYT6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-MT4KMLTYT6');
+    </script>
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -582,5 +590,18 @@
         window.addEventListener('scroll', animateOnScroll);
         window.addEventListener('load', animateOnScroll);
     </script>
+<!-- Cookie Notice (French) -->
+<div id="cookie-notice" class="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white px-6 py-4 rounded-lg shadow-lg flex items-center space-x-4 z-50" style="display: none;">
+  <span>Ce site utilise des cookies pour améliorer votre expérience et analyser le trafic. En continuant à naviguer, vous acceptez notre utilisation des cookies.</span>
+  <button onclick="document.getElementById('cookie-notice').style.display='none'; localStorage.setItem('cookieNoticeAccepted','yes');" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+    J’ai compris
+  </button>
+</div>
+<script>
+  // Affiche la bannière de cookies si non acceptée
+  if (!localStorage.getItem('cookieNoticeAccepted')) {
+    document.getElementById('cookie-notice').style.display = 'flex';
+  }
+</script>
 </body>
 </html>
