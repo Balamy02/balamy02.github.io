@@ -210,55 +210,48 @@
     <header class="fixed w-full glass-navbar z-50 shadow-sm pt-safe top-0 left-0">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
     <div id="navbar-main" class="flex items-center transition-all duration-500">
-        <a href="#" class="text-2xl font-bold special-flashy">Ahmed Balamy</a>
-        <div class="hidden md:flex space-x-8 ml-8">
-            <a href="#home" class="nav-link">Home</a>
-            <a href="#about" class="nav-link">About</a>
-            <a href="#skills" class="nav-link">Skills</a>
-            <a href="#experience" class="nav-link">Experience</a>
-            <a href="#contact" class="nav-link">Contact</a>
-        </div>
-    </div>
-    <div class="flex items-center space-x-4">
-        <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
-            <i class="fas fa-moon dark:hidden"></i>
-            <i class="fas fa-sun hidden dark:block"></i>
-        </button>
-        
-    </div>
+    <a href="#" class="text-2xl font-bold special-flashy">Ahmed Balamy</a>
+    
+</div>
+<div class="flex items-center space-x-4">
+    <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
+        <i class="fas fa-moon dark:hidden"></i>
+        <i class="fas fa-sun hidden dark:block"></i>
+    </button>
+</div>
+
 </nav>
 <script>
-// Navbar show/hide logic: only show full navbar at top, only theme/hamburger on scroll
+// Navbar show/hide logic: on mobile, navbar only visible at top, always visible on desktop
 (function() {
   const navbarMain = document.getElementById('navbar-main');
-  let lastScrollY = window.scrollY;
+  function isMobile() {
+    return window.innerWidth < 768;
+  }
   function handleNavbar() {
-    if(window.scrollY <= 0) {
+    if (isMobile()) {
+      if(window.scrollY <= 0) {
+        navbarMain.style.opacity = '1';
+        navbarMain.style.pointerEvents = 'auto';
+        navbarMain.style.transform = 'translateY(0)';
+      } else {
+        navbarMain.style.opacity = '0';
+        navbarMain.style.pointerEvents = 'none';
+        navbarMain.style.transform = 'translateY(-32px)';
+      }
+    } else {
       navbarMain.style.opacity = '1';
       navbarMain.style.pointerEvents = 'auto';
       navbarMain.style.transform = 'translateY(0)';
-    } else {
-      navbarMain.style.opacity = '0';
-      navbarMain.style.pointerEvents = 'none';
-      navbarMain.style.transform = 'translateY(-32px)';
     }
   }
   window.addEventListener('scroll', handleNavbar);
+  window.addEventListener('resize', handleNavbar);
   window.addEventListener('load', handleNavbar);
 })();
 </script>
         
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="fixed inset-0 z-40 bg-white/95 dark:bg-gray-900/95 shadow-lg flex flex-col md:hidden transition-transform duration-300 transform translate-y-full pt-safe pb-safe px-4 space-y-2 overflow-y-auto">
-    <div class="w-full max-w-full py-8 flex flex-col items-center space-y-4">
-        <a href="#home" class="nav-link py-4 text-lg w-full text-center">Home</a>
-        <a href="#about" class="nav-link py-4 text-lg w-full text-center">About</a>
-        <a href="#skills" class="nav-link py-4 text-lg w-full text-center">Skills</a>
-        <a href="#experience" class="nav-link py-4 text-lg w-full text-center">Experience</a>
-        <a href="#contact" class="nav-link py-4 text-lg w-full text-center">Contact</a>
-        <a href="resume.html" class="nav-link py-4 text-lg w-full text-center" target="_blank">Resume</a>
-    </div>
-</div>
+        
 
     </header>
 
@@ -834,6 +827,35 @@
       mobileMenu.style.transform = 'translateY(100%)';
     }
   } catch(e) { console.error('Mobile menu JS error:', e); }
+})();
+</script>
+<script>
+(function() {
+  var mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+  var mobileMenuDropdown = document.getElementById('mobile-menu-dropdown');
+  var mobileMenuClose = document.getElementById('mobile-menu-close');
+  if (mobileMenuToggle && mobileMenuDropdown) {
+    mobileMenuToggle.addEventListener('click', function() {
+      mobileMenuDropdown.classList.remove('hidden');
+      mobileMenuDropdown.style.transform = 'translateY(0)';
+    });
+    if (mobileMenuClose) {
+      mobileMenuClose.addEventListener('click', function() {
+        mobileMenuDropdown.style.transform = 'translateY(100%)';
+        setTimeout(function(){ mobileMenuDropdown.classList.add('hidden'); }, 300);
+      });
+    }
+    // Close menu when any link is clicked
+    mobileMenuDropdown.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        mobileMenuDropdown.style.transform = 'translateY(100%)';
+        setTimeout(function(){ mobileMenuDropdown.classList.add('hidden'); }, 300);
+      });
+    });
+    // Hide menu by default
+    mobileMenuDropdown.classList.add('hidden');
+    mobileMenuDropdown.style.transform = 'translateY(100%)';
+  }
 })();
 </script>
 </body>
