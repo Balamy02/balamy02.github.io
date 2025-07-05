@@ -251,16 +251,43 @@
 </script>
         
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="fixed inset-0 z-40 bg-white/95 dark:bg-gray-900/95 shadow-lg flex flex-col md:hidden transition-transform duration-300 transform translate-y-0 pt-safe pb-safe px-4 space-y-2 overflow-y-auto">
-            <div class="w-full max-w-full py-8 flex flex-col items-center space-y-4">
-                <a href="#home" class="nav-link py-4 text-lg w-full text-center">Home</a>
-                <a href="#about" class="nav-link py-4 text-lg w-full text-center">About</a>
-                <a href="#skills" class="nav-link py-4 text-lg w-full text-center">Skills</a>
-                <a href="#experience" class="nav-link py-4 text-lg w-full text-center">Experience</a>
-                <a href="#contact" class="nav-link py-4 text-lg w-full text-center">Contact</a>
-                <a href="resume.html" class="nav-link py-4 text-lg w-full text-center" target="_blank">Resume</a>
-            </div>
-        </div>
+        <div id="mobile-menu" class="fixed inset-0 z-40 bg-white/95 dark:bg-gray-900/95 shadow-lg flex flex-col md:hidden transition-transform duration-300 transform translate-y-full pt-safe pb-safe px-4 space-y-2 overflow-y-auto hidden">
+    <div class="w-full max-w-full py-8 flex flex-col items-center space-y-4">
+        <a href="#home" class="nav-link py-4 text-lg w-full text-center">Home</a>
+        <a href="#about" class="nav-link py-4 text-lg w-full text-center">About</a>
+        <a href="#skills" class="nav-link py-4 text-lg w-full text-center">Skills</a>
+        <a href="#experience" class="nav-link py-4 text-lg w-full text-center">Experience</a>
+        <a href="#contact" class="nav-link py-4 text-lg w-full text-center">Contact</a>
+        <a href="resume.html" class="nav-link py-4 text-lg w-full text-center" target="_blank">Resume</a>
+    </div>
+</div>
+<script>
+// Improved mobile menu toggle: menu is hidden by default, overlays only on click, closes on link click
+(function() {
+    var mobileMenuButton = document.getElementById('mobile-menu-button');
+    var mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+            if (!mobileMenu.classList.contains('hidden')) {
+                mobileMenu.style.transform = 'translateY(0)';
+            } else {
+                mobileMenu.style.transform = 'translateY(100%)';
+            }
+        });
+        document.querySelectorAll('#mobile-menu a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.style.transform = 'translateY(100%)';
+            });
+        });
+        window.addEventListener('DOMContentLoaded', function() {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.style.transform = 'translateY(100%)';
+        });
+    }
+})();
+</script>
     </header>
 
     <!-- Hero Section -->
