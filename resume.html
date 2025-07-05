@@ -270,8 +270,14 @@
       }
     }
   </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="resume-toggle.js"></script>
 </head>
-<body>
+<body class="transition-colors duration-300">
+  <button id="theme-toggle" aria-label="Toggle dark mode" class="fixed top-4 right-4 z-50 p-2 rounded-full bg-white/80 dark:bg-gray-900/80 shadow-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+    <i class="fas fa-moon dark:hidden"></i>
+    <i class="fas fa-sun hidden dark:inline"></i>
+  </button>
   <div class="cv-container">
     <h1>Ahmed Balamy</h1>
     <div class="subtitle">Creative, Analytical, and Driven</div>
