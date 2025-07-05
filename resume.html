@@ -1,23 +1,313 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Balamy Ahmed - Resume</title>
+  <title>Ahmed Balamy – CV Créatif</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    body { font-family: Arial, sans-serif; background: #f8fafc; margin: 0; padding: 0; }
-    .container { max-width: 900px; margin: 40px auto; background: #fff; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); padding: 32px; }
-    h1 { text-align: center; color: #2563eb; }
-    .cv-img { display: block; margin: 32px auto; max-width: 100%; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.10); }
-    .back-link { display: block; text-align: center; margin-top: 24px; color: #2563eb; text-decoration: none; font-weight: bold; }
-    .back-link:hover { text-decoration: underline; }
+    body {
+      font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+      background: linear-gradient(120deg, #f8fafc 0%, #e0e7ff 100%);
+      margin: 0;
+      padding: 0;
+      color: #22223b;
+      min-height: 100vh;
+    }
+    .cv-container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: 0 8px 32px rgba(60, 80, 180, 0.10);
+      padding: 40px 32px 32px 32px;
+      position: relative;
+      overflow: hidden;
+      animation: fadeInUp 1s cubic-bezier(.21,1.02,.73,1) 0.2s both;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .cv-img {
+      display: block;
+      margin: 0 auto 24px auto;
+      max-width: 180px;
+      border-radius: 50%;
+      box-shadow: 0 4px 24px rgba(60, 80, 180, 0.15);
+      border: 5px solid #e0e7ff;
+      transition: transform 0.3s;
+    }
+    .cv-img:hover {
+      transform: scale(1.06) rotate(-2deg);
+    }
+    h1 {
+      text-align: center;
+      color: #3b5bdb;
+      font-size: 2.5rem;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+    .subtitle {
+      text-align: center;
+      color: #4361ee;
+      font-size: 1.3rem;
+      margin-bottom: 18px;
+      font-weight: 500;
+    }
+    .section {
+      margin-top: 32px;
+    }
+    .section-title {
+      font-size: 1.25rem;
+      color: #3b5bdb;
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      letter-spacing: 0.5px;
+    }
+    .section-title i {
+      color: #4361ee;
+      font-size: 1.1em;
+    }
+    .profile {
+      font-size: 1.08rem;
+      color: #22223b;
+      text-align: center;
+      margin-bottom: 16px;
+      line-height: 1.7;
+    }
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+    .skill {
+      background: #e0e7ff;
+      color: #3b5bdb;
+      border-radius: 16px;
+      padding: 7px 16px;
+      font-size: 0.98rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      box-shadow: 0 2px 10px rgba(60, 80, 180, 0.04);
+      transition: background 0.2s;
+    }
+    .skill i { color: #4361ee; }
+    .timeline {
+      border-left: 3px solid #e0e7ff;
+      padding-left: 24px;
+      margin-left: 8px;
+    }
+    .exp-block {
+      margin-bottom: 28px;
+      position: relative;
+    }
+    .exp-block:before {
+      content: '';
+      position: absolute;
+      left: -34px;
+      top: 8px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #3b5bdb;
+      border: 3px solid #e0e7ff;
+      box-shadow: 0 2px 8px rgba(60, 80, 180, 0.12);
+    }
+    .exp-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: #3b5bdb;
+      margin-bottom: 2px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .exp-meta {
+      font-size: 0.97rem;
+      color: #495057;
+      margin-bottom: 5px;
+    }
+    .exp-desc {
+      font-size: 1.01rem;
+      color: #22223b;
+      margin-bottom: 7px;
+      line-height: 1.6;
+    }
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 6px;
+    }
+    .badge {
+      background: #b2f2ff;
+      color: #1971c2;
+      border-radius: 12px;
+      padding: 4px 12px;
+      font-size: 0.92rem;
+      font-weight: 500;
+      display: inline-block;
+    }
+    .contact {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+    }
+    .contact a, .contact span {
+      color: #3b5bdb;
+      font-size: 1.08rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.2s;
+    }
+    .contact a:hover { color: #4361ee; }
+    .pdf-btn {
+      display: block;
+      margin: 28px auto 0 auto;
+      background: linear-gradient(90deg, #3b5bdb 0%, #4361ee 100%);
+      color: #fff;
+      font-weight: bold;
+      border: none;
+      border-radius: 24px;
+      padding: 12px 32px;
+      font-size: 1.08rem;
+      cursor: pointer;
+      box-shadow: 0 4px 18px rgba(60, 80, 180, 0.11);
+      transition: background 0.2s, transform 0.2s;
+      letter-spacing: 1px;
+    }
+    .pdf-btn:hover {
+      background: linear-gradient(90deg, #4361ee 0%, #3b5bdb 100%);
+      transform: scale(1.04);
+    }
+    .back-link {
+      display: block;
+      text-align: center;
+      margin: 30px auto 0 auto;
+      color: #3b5bdb;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.07rem;
+      letter-spacing: 0.7px;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: #4361ee; text-decoration: underline; }
+    @media (max-width: 600px) {
+      .cv-container { padding: 16px 2vw; }
+      .cv-img { max-width: 110px; }
+      h1 { font-size: 1.3rem; }
+      .section { margin-top: 20px; }
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>BALAMY AHMED - Resume</h1>
-    <img src="cv.jpg" alt="Balamy Ahmed CV" class="cv-img">
-    <a href="index.html" class="back-link">&larr; Back to Portfolio</a>
+  <div class="cv-container">
+    <img src="cv.jpg" alt="Photo Ahmed Balamy" class="cv-img" />
+    <h1>Ahmed Balamy</h1>
+    <div class="subtitle">Conseiller Support Technique & Résolveur de Problèmes Digitaux</div>
+
+    <div class="section">
+      <div class="section-title"><i class="fas fa-user"></i> Profil</div>
+      <div class="profile">
+        Je transforme les frustrations technologiques en solutions concrètes. Grâce à une expertise technique solide, un sens de l'écoute et une communication claire, j'accompagne particuliers et entreprises dans la résolution de leurs défis numériques. Mon approche : détective, pédagogue et facilitateur.
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><i class="fas fa-toolbox"></i> Compétences</div>
+      <div class="skills">
+        <span class="skill"><i class="fas fa-terminal"></i>Support technique</span>
+        <span class="skill"><i class="fas fa-users"></i>Service client</span>
+        <span class="skill"><i class="fas fa-tasks"></i>Résolution de problèmes</span>
+        <span class="skill"><i class="fab fa-linux"></i>Linux & CLI</span>
+        <span class="skill"><i class="fas fa-comment-dots"></i>Communication technique</span>
+        <span class="skill"><i class="fas fa-users-between-lines"></i>Travail en équipe</span>
+        <span class="skill"><i class="fas fa-file-code"></i>Scripting</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><i class="fas fa-briefcase"></i> Expérience</div>
+      <div class="timeline">
+        <div class="exp-block">
+          <div class="exp-title"><i class="fas fa-building"></i> Conseiller Support Technique</div>
+          <div class="exp-meta">TP (Top-tier Tech Ecosystem) | 2024 – Présent</div>
+          <div class="exp-desc">
+            Support technique pour un écosystème technologique de pointe : résolution de problèmes complexes, accompagnement des utilisateurs, communication claire et efficace. Reconnu pour mon adaptabilité, ma curiosité et mon approche centrée sur l'utilisateur.
+          </div>
+          <div class="badges">
+            <span class="badge">Support Technique</span>
+            <span class="badge">Résolution de Problèmes</span>
+            <span class="badge">Service Client</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><i class="fas fa-graduation-cap"></i> Formation</div>
+      <div class="timeline">
+        <div class="exp-block">
+          <div class="exp-title"><i class="fas fa-laptop-code"></i> Formation en Ingénierie Logicielle</div>
+          <div class="exp-meta">ALX Africa | 2022 – 2023</div>
+          <div class="exp-desc">
+            Formation intensive en fondamentaux du développement logiciel, résolution de problèmes, Linux et outils en ligne de commande. Développement de l'esprit critique et capacité d'apprentissage rapide.
+          </div>
+          <div class="badges">
+            <span class="badge">Linux</span>
+            <span class="badge">CLI</span>
+            <span class="badge">Résolution de Problèmes</span>
+          </div>
+        </div>
+        <div class="exp-block">
+          <div class="exp-title"><i class="fas fa-university"></i> Baccalauréat</div>
+          <div class="exp-meta">Mention Très Bien</div>
+          <div class="exp-desc">
+            Excellence académique, mention « Très Bien ». Acquisition de solides bases en réflexion critique et résolution de problèmes.
+          </div>
+          <div class="badges">
+            <span class="badge">Excellence</span>
+            <span class="badge">Mention Très Bien</span>
+            <span class="badge">Pensée Critique</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><i class="fas fa-language"></i> Langues</div>
+      <div class="skills">
+        <span class="skill"><i class="fas fa-globe"></i>Français (professionnel)</span>
+        <span class="skill"><i class="fas fa-globe"></i>Anglais (professionnel)</span>
+        <span class="skill"><i class="fas fa-globe"></i>Arabe (natif)</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><i class="fas fa-paper-plane"></i> Contact</div>
+      <div class="contact">
+        <span><i class="fas fa-envelope"></i>ahmedbalamypro@gmail.com</span>
+        <a href="https://www.linkedin.com/in/ahmed-balamy10" target="_blank"><i class="fab fa-linkedin"></i>linkedin.com/in/ahmed-balamy10</a>
+        <a href="https://github.com/Balamy02" target="_blank"><i class="fab fa-github"></i>github.com/Balamy02</a>
+      </div>
+    </div>
+
+    <button class="pdf-btn" onclick="window.print()"><i class="fas fa-file-download"></i> Télécharger en PDF</button>
+    <a href="index.html" class="back-link">&larr; Retour au Portfolio</a>
   </div>
 </body>
 </html>
