@@ -357,10 +357,13 @@
 </head>
 <body class="bg-white dark:bg-black text-gray-900 dark:text-gray-100 antialiased transition-colors duration-300">
     <!-- Language selection overlay -->
-    <div id="lang-overlay" class="fixed inset-0 z-[9999] flex items-center justify-center bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-black dark:via-black dark:to-gray-950">
-      <div class="text-center p-10 rounded-3xl border border-gray-100 dark:border-gray-800 bg-white/90 dark:bg-gray-900/90 shadow-2xl max-w-lg mx-auto backdrop-blur">
+    <div id="lang-overlay" class="fixed inset-0 z-[9999] flex items-center justify-center bg-white dark:bg-black" role="dialog" aria-modal="true" aria-label="Language selection">
+      <div class="text-center p-10 rounded-3xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-2xl w-[min(92vw,720px)] mx-auto">
         <h2 class="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">Choisissez votre langue · Choose your language</h2>
         <style>
+          /* Lock scroll behind the modal */
+          html, body { height: 100%; overflow: hidden; overscroll-behavior: none; }
+          #lang-overlay { touch-action: none; }
           .glass-wrap { perspective: none; }
           .glass-card {
             background: rgba(255,255,255,0.98);
