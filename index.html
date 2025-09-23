@@ -55,10 +55,15 @@
       /* During theme switch, disable expensive transitions/animations to avoid iOS lag */
       .theme-switching *,
       .theme-switching *::before,
-      .theme-switching *::after {
-        transition: none !important;
-        animation: none !important;
-      }
+      .theme-switching *::after { transition: none !important; animation: none !important; filter: none !important; }
+      .theme-switching [class*="shadow"], .theme-switching .shadow, .theme-switching .shadow-xl, .theme-switching .shadow-2xl { box-shadow: none !important; }
+      .theme-switching .blur-3xl, .theme-switching [class*="blur"] { filter: none !important; }
+      .theme-switching .backdrop-blur-md { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+
+      /* iOS global optimization: turn off costly filters on iOS devices */
+      .ios-opt .backdrop-blur-md { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+      .ios-opt .blur-3xl, .ios-opt [class*="blur"] { filter: none !important; }
+      .ios-opt [class*="shadow-2xl"], .ios-opt .shadow-2xl { box-shadow: 0 6px 12px rgba(0,0,0,0.12) !important; }
     </style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MT4KMLTYT6"></script>
@@ -364,7 +369,7 @@
 </style>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-white dark:bg-black text-gray-900 dark:text-gray-100 antialiased transition-colors duration-300">
+<body class="bg-white dark:bg-black text-gray-900 dark:text-gray-100 antialiased">
     <!-- Language selection overlay -->
     <div id="lang-overlay" class="fixed inset-0 z-[9999] flex items-center justify-center bg-white dark:bg-black" role="dialog" aria-modal="true" aria-label="Language selection">
       <div class="text-center p-10 rounded-3xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-2xl w-[min(92vw,720px)] mx-auto">
@@ -569,6 +574,10 @@
             }
           });
           obs.observe(html, { attributes: true, attributeFilter: ['class'] });
+          // iOS detection to disable heavy effects globally
+          var ua = navigator.userAgent || navigator.vendor || window.opera;
+          var isIOS = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+          if (isIOS) { html.classList.add('ios-opt'); }
         } catch(e) {}
       })();
     </script>
