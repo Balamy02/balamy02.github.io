@@ -1,11 +1,56 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="fr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ahmed Balamy | Tech Problem Solver</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="description" content="Ahmed Balamy - Tech Problem Solver & Digital Enthusiast. Creating elegant solutions to complex problems.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.ico">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts - SF Pro Display (Apple's font) -->
+    <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              'apple-blue': '#0071e3',
+              'apple-blue-dark': '#0077ed',
+              'apple-gray-1': '#f5f5f7',
+              'apple-gray-2': '#d2d2d7',
+              'apple-gray-3': '#86868b',
+              'apple-gray-4': '#424245',
+              'apple-dark-1': '#1d1d1f',
+              'apple-dark-2': '#000000',
+            },
+            fontFamily: {
+              sans: ['SF Pro Display', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.5s ease-out',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+            },
+          },
+        },
+      }
+    </script>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MT4KMLTYT6"></script>
     <script>
@@ -14,48 +59,158 @@
       gtag('js', new Date());
       gtag('config', 'G-MT4KMLTYT6');
     </script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    animation: {
-                        'fade-in': 'fadeIn 1s ease-in-out',
-                        'float': 'float 3s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0' },
-                            '100%': { opacity: '1' },
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-10px)' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+    
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        /* Apple-inspired typography and colors */
+        :root {
+            --apple-blue: #0071E3;
+            --apple-gray-1: #F5F5F7;
+            --apple-gray-2: #D2D2D7;
+            --apple-gray-3: #86868B;
+            --apple-gray-4: #424245;
+            --apple-dark-1: #1D1D1F;
+        }
         
         body {
-            font-family: 'Inter', sans-serif;
-            transition: background-color 0.3s ease;
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--apple-dark-1);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Apple-like section styling */
+        section {
+            padding: 6rem 0;
+        }
+        
+        /* Apple-like buttons */
+        .btn {
+            display: inline-block;
+            padding: 0.6rem 1.4rem;
+            border-radius: 980px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+        
+        .btn-primary {
+            background-color: var(--apple-blue);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #0077ED;
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            border: 1px solid var(--apple-blue);
+            color: var(--apple-blue);
+            background: transparent;
+        }
+        
+        .btn-outline:hover {
+            background-color: rgba(0, 113, 227, 0.1);
+        }
+        
+        /* Apple-like cards */
+        .card {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), 
+                        box-shadow 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Apple-like typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600;
+            letter-spacing: -0.015em;
+            line-height: 1.1;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -0.022em;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        /* Navigation */
+        .nav-link {
+            position: relative;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            color: var(--apple-gray-4);
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--apple-blue);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 1rem;
+            right: 1rem;
+            height: 2px;
+            background-color: var(--apple-blue);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            transform: scaleX(1);
+        }
+        
+        /* Dark mode */
+        .dark {
+            background-color: #000000;
+            color: #F5F5F7;
+        }
+        
+        .dark .card {
+            background-color: #1D1D1F;
+            color: #F5F5F7;
+        }
+        
+        /* Skill cards */
+        .skill-card {
+            background: white;
+            border-radius: 18px;
+            padding: 2rem;
+            transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
         
         .skill-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .dark .skill-card {
+            background-color: #1D1D1F;
+            border-color: rgba(255, 255, 255, 0.1);
         }
         
         .dark .skill-card:hover {
             box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
-        }
-        
-        .nav-link {
-            position: relative;
         }
         
         .nav-link::after {
@@ -200,141 +355,348 @@
 </style>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300 overflow-x-hidden min-h-screen">
+<body class="bg-white dark:bg-black text-gray-900 dark:text-gray-100 antialiased transition-colors duration-300">
+    <!-- Language selection overlay -->
+    <div id="lang-overlay" class="fixed inset-0 z-[9999] flex items-center justify-center bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-black dark:via-black dark:to-gray-950">
+      <div class="text-center p-10 rounded-3xl border border-gray-100 dark:border-gray-800 bg-white/90 dark:bg-gray-900/90 shadow-2xl max-w-lg mx-auto backdrop-blur">
+        <h2 class="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">Choisissez votre langue · Choose your language</h2>
+        <style>
+          .glass-wrap { perspective: none; }
+          .glass-card {
+            background: rgba(255,255,255,0.98);
+            border: 1px solid rgba(17,24,39,0.08);
+            border-radius: 24px;
+            box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+            transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+          }
+          .dark .glass-card {
+            background: rgba(17,24,39,0.96);
+            border-color: rgba(255,255,255,0.06);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+          }
+          .glass-card:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(0,0,0,0.1); }
+          .pill {
+            border-radius: 9999px;
+            padding: 1.1rem 1.6rem;
+            font-weight: 700;
+            letter-spacing: .02em;
+            will-change: transform;
+          }
+          @media (max-width: 640px) {
+            .pill { padding: 1.2rem 1.8rem; font-size: 1.05rem; }
+          }
+          .pill-fr { background: #2563eb; color: #fff; }
+          .pill-en { background: #7c3aed; color: #fff; }
+          .pill-fr:hover { background: #1d4ed8; }
+          .pill-en:hover { background: #6d28d9; }
+          .pill-fr:focus, .pill-en:focus { outline: none; box-shadow: 0 0 0 4px rgba(59,130,246,0.25); }
+          .dark .pill-fr:focus, .dark .pill-en:focus { box-shadow: 0 0 0 4px rgba(99,102,241,0.25); }
+
+          /* Premium background blobs */
+          .overlay-stage { position: relative; }
+          .bg-blob { position: absolute; filter: blur(38px); opacity: .32; border-radius: 9999px; transform: translate3d(0,0,0); will-change: transform; }
+          .blob-anim { animation: floatSlow 12s ease-in-out infinite; }
+          @keyframes floatSlow { 0%,100% { transform: translateY(0) translateX(0) scale(1); } 50% { transform: translateY(-8px) translateX(5px) scale(1.02); } }
+          @media (prefers-reduced-motion: reduce) {
+            .blob-anim { animation: none; }
+          }
+
+          /* 3D tilt + magnetic hover */
+          .choice-card { will-change: transform; transform-style: preserve-3d; }
+          .choice-card .pill { transform: translateZ(24px); }
+          .choice-card:hover { transform: translateY(-4px); }
+          @media (prefers-reduced-motion: reduce) {
+            .choice-card, .choice-card .pill { transition: none !important; transform: none !important; }
+          }
+        </style>
+        <div class="overlay-stage">
+          <!-- Decorative gradient blobs behind cards -->
+          <div class="pointer-events-none absolute inset-0 -z-10">
+            <span class="bg-blob blob-anim" style="width:180px;height:180px;left:-10px;top:-20px;background:linear-gradient(135deg,#60a5fa,#c084fc);"></span>
+            <span class="bg-blob blob-anim" style="width:140px;height:140px;right:-10px;top:30px;background:linear-gradient(135deg,#a78bfa,#f472b6);animation-delay:.6s;"></span>
+            <span class="bg-blob blob-anim" style="width:160px;height:160px;left:40%;bottom:-20px;background:linear-gradient(135deg,#93c5fd,#34d399);animation-delay:1.2s;"></span>
+          </div>
+
+          <div class="glass-wrap relative mx-auto w-full max-w-2xl mb-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <!-- FR card -->
+          <div class="glass-card choice-card p-6 sm:p-8 text-left cursor-pointer" role="button" tabindex="0" data-lang="fr">
+            <div class="text-sm uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-3">Version</div>
+            <div class="text-2xl font-extrabold text-gray-900 dark:text-white mb-4">Français</div>
+            <p class="text-gray-600 dark:text-gray-400 mb-6">Parcourez le site en version française.</p>
+            <button id="choose-fr" class="pill pill-fr w-full text-center focus:outline-none focus:ring-4 focus:ring-blue-400/30">FR</button>
+          </div>
+          <!-- EN card -->
+          <div class="glass-card choice-card p-6 sm:p-8 text-left cursor-pointer" role="button" tabindex="0" data-lang="en">
+            <div class="text-sm uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-3">Version</div>
+            <div class="text-2xl font-extrabold text-gray-900 dark:text-white mb-4">English</div>
+            <p class="text-gray-600 dark:text-gray-400 mb-6">Browse the website in English.</p>
+            <button id="choose-en" class="pill pill-en w-full text-center focus:outline-none focus:ring-4 focus:ring-purple-400/30">EN</button>
+          </div>
+          </div>
+        </div>
+        </div>
+        
+      </div>
+    </div>
+    <script>
+      (function() {
+        try {
+          function go(lang){
+            if(lang === 'en') { window.location.href = 'en.html'; }
+            else { window.location.href = 'fr.html'; }
+          }
+          var frBtn = document.getElementById('choose-fr');
+          var enBtn = document.getElementById('choose-en');
+          if (frBtn) frBtn.addEventListener('click', function(){ go('fr'); });
+          if (enBtn) enBtn.addEventListener('click', function(){ go('en'); });
+          // Prevent double-trigger when clicking the button inside the card
+          if (frBtn) frBtn.addEventListener('click', function(e){ e.stopPropagation(); });
+          if (enBtn) enBtn.addEventListener('click', function(e){ e.stopPropagation(); });
+
+          // Accessibility: keyboard activation
+          [frBtn, enBtn].forEach(function(btn){
+            if(!btn) return;
+            btn.setAttribute('tabindex','0');
+            btn.addEventListener('keydown', function(e){
+              if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); btn.click(); }
+            });
+          });
+          // Set initial focus
+          if (frBtn) { try { frBtn.focus({preventScroll:true}); } catch(_){} }
+
+          // Hotkeys: 'f' or 'e'
+          window.addEventListener('keydown', function(e){
+            if (e.key && e.key.length === 1) {
+              var k = e.key.toLowerCase();
+              if (k === 'f') go('fr');
+              if (k === 'e') go('en');
+            }
+          });
+
+          // Make entire cards clickable + keyboard accessible
+          var choiceCards = document.querySelectorAll('.choice-card[data-lang]');
+          choiceCards.forEach(function(card){
+            var lang = card.getAttribute('data-lang');
+            card.addEventListener('click', function(){ go(lang); });
+            card.addEventListener('keydown', function(e){
+              if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(lang); }
+            });
+          });
+
+          // Premium micro-interactions: 3D tilt & magnetic hover
+          var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          var cards = document.querySelectorAll('.choice-card');
+          if (!reduceMotion) {
+            cards.forEach(function(card){
+              var rect;
+              function onMove(ev){
+                rect = rect || card.getBoundingClientRect();
+                var x = (ev.clientX - rect.left) / rect.width; // 0..1
+                var y = (ev.clientY - rect.top) / rect.height; // 0..1
+                var rotY = (x - 0.5) * 10; // deg
+                var rotX = (0.5 - y) * 8;  // deg
+                card.style.transform = 'translateY(-4px) rotateX(' + rotX + 'deg) rotateY(' + rotY + 'deg)';
+              }
+              function onLeave(){
+                rect = null;
+                card.style.transform = '';
+              }
+              card.addEventListener('mousemove', onMove);
+              card.addEventListener('mouseleave', onLeave);
+            });
+
+            // Magnetic buttons (stabilized)
+            var isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+            [frBtn, enBtn].forEach(function(btn){
+              if(!btn) return;
+              var parent = btn.closest('.choice-card');
+              if(!parent) return;
+              if (isTouch) return; // avoid hover tricks on touch
+              var rafId = null;
+              function onMove(ev){
+                if (rafId) cancelAnimationFrame(rafId);
+                rafId = requestAnimationFrame(function(){
+                  var r = btn.getBoundingClientRect();
+                  var mx = ev.clientX - (r.left + r.width/2);
+                  var my = ev.clientY - (r.top + r.height/2);
+                  // clamp movement to avoid chasing cursor
+                  var fx = Math.max(-12, Math.min(12, mx * 0.04));
+                  var fy = Math.max(-12, Math.min(12, my * 0.04));
+                  btn.style.transform = 'translate(' + fx + 'px,' + fy + 'px)';
+                });
+              }
+              function onLeave(){ if (rafId) cancelAnimationFrame(rafId); btn.style.transform = ''; }
+              function onDown(){ btn.style.transform = ''; }
+              parent.addEventListener('mousemove', onMove);
+              parent.addEventListener('mouseleave', onLeave);
+              btn.addEventListener('mousedown', onDown);
+              btn.addEventListener('touchstart', onDown, {passive:true});
+            });
+          }
+        } catch(e) { /* noop */ }
+      })();
+    </script>
     <style>
       @media (max-width: 640px) {
         html, body { overscroll-behavior-x: none; }
       }
     </style>
-    <!-- Header/Navigation -->
-    <header class="fixed w-full glass-navbar z-50 shadow-sm pt-safe top-0 left-0">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-    <div id="navbar-main" class="flex items-center transition-all duration-500">
-<a href="#" class="text-2xl font-bold special-flashy">Ahmed Balamy</a>
-    <div class="hidden md:flex space-x-8 ml-8">
-        <a href="#home" class="nav-link">Home</a>
-        <a href="#about" class="nav-link">About</a>
-        <a href="#skills" class="nav-link">Skills</a>
-        <a href="#experience" class="nav-link">Experience</a>
-        <a href="#contact" class="nav-link">Contact</a>
-    </div>
-</div>
-<div class="flex items-center space-x-4">
-    <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
-        <i class="fas fa-moon dark:hidden"></i>
-        <i class="fas fa-sun hidden dark:block"></i>
-    </button>
-</div>
-
-</nav>
-<script>
-// Navbar show/hide logic: on mobile, navbar only visible at top, always visible on desktop
-(function() {
-  const navbarMain = document.getElementById('navbar-main');
-  function isMobile() {
-    return window.innerWidth < 768;
-  }
-  function handleNavbar() {
-    if (isMobile()) {
-      if(window.scrollY <= 0) {
-        navbarMain.style.opacity = '1';
-        navbarMain.style.pointerEvents = 'auto';
-        navbarMain.style.transform = 'translateY(0)';
-      } else {
-        navbarMain.style.opacity = '0';
-        navbarMain.style.pointerEvents = 'none';
-        navbarMain.style.transform = 'translateY(-32px)';
-      }
-    } else {
-      navbarMain.style.opacity = '1';
-      navbarMain.style.pointerEvents = 'auto';
-      navbarMain.style.transform = 'translateY(0)';
-    }
-  }
-  window.addEventListener('scroll', handleNavbar);
-  window.addEventListener('resize', handleNavbar);
-  window.addEventListener('load', handleNavbar);
-})();
-</script>
-        
-        
-
-    </header>
-
-    <!-- Hero Section -->
-    <section id="home" class="min-h-[90vh] flex flex-col-reverse sm:flex-row items-center pt-24 pb-8 sm:pt-20 sm:pb-0 px-4 sm:px-6">
-        <div class="w-full max-w-6xl mx-auto py-8 flex flex-col-reverse sm:flex-row items-center gap-8 sm:gap-0">
-            <div class="w-full sm:w-1/2 mb-8 sm:mb-0 animate-fade-in px-0 sm:px-4">
-                <h1 class="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 text-center sm:text-left leading-tight">
-    Hi, I'm <span class="bg-gradient-to-r from-blue-600 via-purple-500 to-pink-400 text-transparent bg-clip-text animate-pulse">Ahmed <span style="font-family: 'Brush Script MT', cursive; font-size:1.2em; letter-spacing:0.05em;">Balamy</span> <span class="text-2xl align-super">✨</span></span>
-</h1>
-                <h2 class="text-xl xs:text-2xl md:text-3xl font-semibold mb-6 text-center sm:text-left">Tech Problem Solver</h2>
-                <p class="text-base xs:text-lg md:text-xl mb-8 text-gray-600 dark:text-gray-300 max-w-lg mx-auto sm:mx-0 text-center sm:text-left">
-                    I turn tech frustrations into solutions with a blend of technical expertise and human understanding. 
-                    Think of me as your digital detective - analyzing, troubleshooting, and explaining technology in ways that actually make sense.
-                </p>
-                <div class="flex flex-wrap gap-3 justify-center sm:justify-start">
-                    <a href="#contact" class="px-5 py-3 text-base xs:text-lg bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors w-full xs:w-auto text-center">
-                        Contact Me
-                    </a>
-                    <a href="resume.html" class="px-5 py-3 text-base xs:text-lg border border-blue-600 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-800 rounded-lg font-medium transition-colors w-full xs:w-auto text-center" target="_blank">
-                        View Resume
-                    </a>
+    <!-- Navigation -->
+    <nav id="navbar-main" class="fixed w-full bg-white/80 dark:bg-black/80 backdrop-blur-md z-50 border-b border-gray-100 dark:border-gray-900">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <a href="#" class="text-xl font-semibold tracking-tight">Ahmed Balamy</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#" class="nav-link text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">Accueil</a>
+                    <a href="#about" class="nav-link text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">À propos</a>
+                    <a href="#experience" class="nav-link text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">Expérience</a>
+                    <a href="#education" class="nav-link text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">Éducation</a>
+                    <a href="#skills" class="nav-link text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">Compétences</a>
+                    <a href="#contact" class="nav-link text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">Contact</a>
+                </div>
+                
+                <!-- -->
+                <div class="flex items-center space-x-4">
+                    <div class="hidden md:flex items-center text-sm text-gray-600 dark:text-gray-400 space-x-2">
+                        <a href="fr.html" class="hover:text-blue-500 dark:hover:text-blue-400 font-medium">FR</a>
+                        <span class="opacity-50">|</span>
+                        <a href="en.html" class="hover:text-blue-500 dark:hover:text-blue-400">EN</a>
+                    </div>
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-900 transition-colors" aria-label="Toggle theme">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:inline"></i>
+                    </button>
+                    <button id="mobile-menu-button" class="md:hidden p-2 -mr-2" aria-label="Menu">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
                 </div>
             </div>
-            <div class="w-full sm:w-1/2 flex justify-center items-center animate-float mb-8 sm:mb-0 px-0 sm:px-4">
-                <div class="relative w-44 h-44 xs:w-56 xs:h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center">
-                    <div class="absolute inset-0 rounded-full bg-blue-400 opacity-20 animate-ping"></div>
-                    <i class="fas fa-laptop-code text-white text-4xl xs:text-6xl md:text-8xl"></i>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 dark:bg-black/95 border-t border-gray-100 dark:border-gray-900">
+            <div class="container mx-auto px-6 py-4 flex flex-col space-y-5">
+                <div class="flex items-center space-x-2">
+                    <a href="fr.html" class="text-gray-900 dark:text-gray-100 hover:text-blue-500 dark:hover:text-blue-400 font-medium">FR</a>
+                    <span class="text-gray-400">|</span>
+                    <a href="en.html" class="text-gray-900 dark:text-gray-100 hover:text-blue-500 dark:hover:text-blue-400">EN</a>
+                </div>
+                <a href="#" class="text-lg font-medium text-gray-900 dark:text-gray-100 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">Accueil</a>
+                <a href="#about" class="text-lg font-medium text-gray-900 dark:text-gray-100 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">À propos</a>
+                <a href="#experience" class="text-lg font-medium text-gray-900 dark:text-gray-100 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">Expérience</a>
+                <a href="#education" class="text-lg font-medium text-gray-900 dark:text-gray-100 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">Éducation</a>
+                <a href="#skills" class="text-lg font-medium text-gray-900 dark:text-gray-100 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">Compétences</a>
+                <a href="#contact" class="text-lg font-medium text-gray-900 dark:text-gray-100 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center pt-16 pb-20">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center justify-between">
+                <div class="lg:w-1/2 mb-16 lg:mb-0 lg:pr-12">
+                    <div class="inline-block bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-medium px-3 py-1 rounded-full mb-6">
+                        Disponible pour de nouvelles opportunités
+                    </div>
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight tracking-tight">
+                        BALAMY AHMED
+                    </h1>
+                    <h2 class="text-2xl md:text-3xl font-semibold text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+                        Créer, diagnostiquer, innover – avec passion et précision.
+                    </h2>
+                    <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-10 max-w-2xl leading-relaxed">
+                        Portfolio personnel moderne et épuré. Un regard précis, une exécution soignée et une expérience premium.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#about" class="btn btn-primary px-8 py-3 text-base font-medium">
+                            Découvrir mon parcours <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="#contact" class="btn btn-outline px-8 py-3 text-base font-medium">
+                            Me contacter
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 flex justify-center relative">
+                    <div class="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96">
+                        <!-- Subtle gradient background -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-purple-500/20 rounded-3xl transform rotate-12 scale-95 opacity-70 dark:opacity-30 blur-3xl"></div>
+
+                        <!-- Animated Apple-like devices (no logos) -->
+                        <style>
+                          @keyframes floatY { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+                          .float-anim { animation: floatY 4s ease-in-out infinite; }
+                          .delay-1 { animation-delay: .35s; }
+                          .delay-2 { animation-delay: .7s; }
+                        </style>
+
+                        <div class="relative w-full h-full flex items-center justify-center">
+                          <!-- Laptop -->
+                          <div class="float-anim delay-2 relative w-44 h-28 md:w-52 md:h-32 lg:w-60 lg:h-36 rounded-2xl bg-gradient-to-b from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 shadow-2xl border border-gray-200/70 dark:border-gray-700/70">
+                            <div class="absolute inset-x-3 top-3 bottom-5 rounded-xl bg-white/90 dark:bg-black/60 border border-gray-300 dark:border-gray-700"></div>
+                            <div class="absolute left-1/2 -bottom-2 w-40 md:w-48 lg:w-56 h-2 -translate-x-1/2 rounded-b-2xl bg-gradient-to-b from-gray-300 to-gray-400 dark:from-gray-700 dark:to-gray-600 shadow"></div>
+                          </div>
+
+                          <!-- Tablet -->
+                          <div class="float-anim delay-1 absolute -left-2 -top-2 md:-left-4 md:-top-3 -rotate-6 w-28 h-40 md:w-32 md:h-44 lg:w-36 lg:h-48 rounded-3xl bg-gradient-to-b from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 shadow-xl border border-gray-200/70 dark:border-gray-700/70">
+                            <div class="absolute inset-[10px] rounded-2xl bg-white/90 dark:bg-black/60 border border-gray-300 dark:border-gray-700"></div>
+                            <div class="absolute left-1/2 -translate-x-1/2 bottom-2 w-10 h-1.5 rounded-full bg-gray-300 dark:bg-gray-600"></div>
+                          </div>
+
+                          <!-- Phone -->
+                          <div class="float-anim absolute -right-1 -bottom-1 md:-right-2 md:-bottom-2 rotate-6 w-16 h-32 md:w-20 md:h-36 lg:w-24 lg:h-40 rounded-[2rem] bg-gradient-to-b from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 shadow-xl border border-gray-200/70 dark:border-gray-700/70">
+                            <div class="absolute inset-[6px] rounded-[1.6rem] bg-white/90 dark:bg-black/60 border border-gray-300 dark:border-gray-700"></div>
+                            <div class="absolute left-1/2 -translate-x-1/2 top-2 w-10 h-1.5 rounded-full bg-gray-300 dark:bg-gray-600"></div>
+                          </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-gray-100 dark:bg-gray-800">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-12 section-title">About Me</h2>
+    <section id="about" class="py-24 bg-gray-50 dark:bg-black">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="text-center mb-16">
+                <span class="inline-block bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-medium px-4 py-1.5 rounded-full mb-4">À propos</span>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Parcours et valeurs</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+                    Je conçois des solutions élégantes et fiables, avec une attention particulière portée à la simplicité, la performance et l’expérience utilisateur.
+                </p>
+            </div>
             
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="animate-fade-in">
-                    <p class="text-lg mb-6">
-                        I'm a dedicated Tech Problem Solver currently working with a top-tier tech ecosystem through TP. 
-                        My journey in technology began with my training at ALX, where I developed a strong foundation in 
-                        software engineering principles and problem-solving techniques.
-                    </p>
-                    <p class="text-lg mb-6">
-                        What drives me is the satisfaction of helping users overcome technical challenges. I thrive in 
-                        fast-paced environments where I can apply my adaptability, curiosity, and communication skills to 
-                        deliver clear solutions to complex problems.
-                    </p>
-                    <p class="text-lg">
-                        Based in Casablanca, Morocco, I'm constantly expanding my technical knowledge while maintaining 
-                        a user-focused approach to support. My goal is to make technology accessible and frustration-free 
-                        for everyone I assist.
-                    </p>
-                </div>
-                <div class="grid grid-cols-2 gap-4 animate-fade-in">
-                    <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
-                        <div class="text-blue-600 dark:text-blue-400 text-4xl mb-4">
-                            <i class="fas fa-headset"></i>
-                        </div>
-                        <h3 class="font-semibold text-lg mb-2 text-gray-900 dark:text-gray-100">User-Centric</h3>
-                        <p class="text-gray-600 dark:text-gray-300">Focused on delivering solutions that make sense to users</p>
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <div class="space-y-6">
+                        <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">Qui suis-je ?</h3>
+                        <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+                            Basé au Blanc-Mesnil, France. Passionné par la technologie, le design et l’innovation, je combine rigueur et sens du détail pour offrir un service premium.
+                        </p>
+                        <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+                            Mon approche est simple : comprendre, diagnostiquer et résoudre, tout en gardant une communication claire et humaine.
+                        </p>
                     </div>
-                    <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
-                        <div class="text-blue-600 dark:text-blue-400 text-4xl mb-4">
-                            <i class="fas fa-lightbulb"></i>
+                    
+                    <div class="grid grid-cols-2 gap-6 mt-8">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-blue-500 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-900 dark:text-white">Localisation</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Blanc-Mesnil, France</p>
+                            </div>
                         </div>
-                        <h3 class="font-semibold text-lg mb-2 text-gray-900 dark:text-gray-100">Problem Solver</h3>
-                        <p class="text-gray-600 dark:text-gray-300">Analytical approach to troubleshooting</p>
-                    </div>
-                    <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
-                        <div class="text-blue-600 dark:text-blue-400 text-4xl mb-4">
-                            <i class="fas fa-comments"></i>
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center">
+                                <i class="fas fa-envelope text-purple-500 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-900 dark:text-white">Email</h4>
+                                <a href="mailto:ahmedbalamypro@gmail.com" class="text-blue-500 hover:underline">ahmedbalamypro@gmail.com</a>
+                            </div>
                         </div>
-                        <h3 class="font-semibold text-lg mb-2 text-gray-900 dark:text-gray-100">Communicator</h3>
-                        <p class="text-gray-600 dark:text-gray-300">Clear explanations for technical concepts</p>
                     </div>
                     <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
                         <div class="text-blue-600 dark:text-blue-400 text-4xl mb-4">
@@ -349,520 +711,213 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-12 section-title">My Problem-Solving Toolkit</h2>
-            
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                <!-- Technical Skills -->
-                <div class="skill-card bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md border border-gray-200 dark:border-gray-600 transition-all duration-300">
-                    <div class="text-blue-700 dark:text-blue-300 text-3xl mb-3">
-                        <i class="fas fa-terminal"></i>
+    <section id="skills" class="py-24 bg-gray-50 dark:bg-black">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="text-center mb-16">
+                <span class="inline-block bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-medium px-4 py-1.5 rounded-full mb-4">Compétences</span>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Ce que je maîtrise</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-8"></div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="group bg-white dark:bg-gray-900 p-8 rounded-2xl border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-16 h-16 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-headset text-2xl text-blue-500"></i>
                     </div>
-                    <h3 class="font-semibold text-lg mb-2 text-gray-900 dark:text-gray-100">Technical Support</h3>
-                    <p class="text-gray-800 dark:text-gray-200 text-sm">Diagnosing and resolving hardware/software issues</p>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Relation client & incidents</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Accueil, écoute active, suivi et résolution avec professionnalisme.</p>
                 </div>
-                
-                <div class="skill-card bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md border border-gray-200 dark:border-gray-600 transition-all duration-300">
-    <div class="text-blue-700 dark:text-blue-300 text-3xl mb-3">
-        <i class="fas fa-brain"></i>
-    </div>
-    <h3 class="font-semibold text-lg mb-2 text-gray-900 dark:text-gray-100">Analytical Thinking</h3>
-    <p class="text-gray-800 dark:text-gray-200 text-sm">Solving complex problems with logic and creativity</p>
-</div>
-                
-                <div class="skill-card bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md border border-gray-200 dark:border-gray-600 transition-all duration-300">
-                    <div class="text-blue-700 dark:text-blue-300 text-3xl mb-3">
-                        <i class="fas fa-tasks"></i>
+                <div class="group bg-white dark:bg-gray-900 p-8 rounded-2xl border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-16 h-16 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-tools text-2xl text-blue-500"></i>
                     </div>
-                    <h3 class="font-semibold text-lg mb-2 text-gray-900 dark:text-gray-100">Problem Solving</h3>
-                    <p class="text-gray-800 dark:text-gray-200 text-sm">Methodical approach to troubleshooting</p>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Diagnostic & résolution</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Analyse, tests, détection des causes et mise en œuvre des solutions.</p>
                 </div>
-                
-                <div class="skill-card bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md border border-gray-200 dark:border-gray-600 transition-all duration-300">
-                    <div class="text-blue-700 dark:text-blue-300 text-3xl mb-3">
-                        <i class="fas fa-code"></i>
+                <div class="group bg-white dark:bg-gray-900 p-8 rounded-2xl border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-16 h-16 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-users-cog text-2xl text-blue-500"></i>
                     </div>
-                    <h3 class="font-semibold text-lg mb-2 text-gray-900 dark:text-gray-100">Command Line</h3>
-                    <p class="text-gray-800 dark:text-gray-200 text-sm">Proficient with Linux/Unix command line tools</p>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Management & communication</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Organisation, coordination et transmission claire de l’information.</p>
                 </div>
-                
-                <div class="skill-card bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md border border-gray-200 dark:border-gray-600 transition-all duration-300">
-                    <div class="text-blue-700 dark:text-blue-300 text-3xl mb-3">
-                        <i class="fas fa-users-between-lines"></i>
+                <div class="group bg-white dark:bg-gray-900 p-8 rounded-2xl border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-16 h-16 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-code text-2xl text-blue-500"></i>
                     </div>
-                    <h3 class="font-semibold text-lg mb-2 text-gray-900 dark:text-gray-100">Teamwork</h3>
-                    <p class="text-gray-800 dark:text-gray-200 text-sm">Collaborating effectively in tech environments</p>
-                </div>
-                
-                <div class="skill-card bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md border border-gray-200 dark:border-gray-600 transition-all duration-300">
-                    <div class="text-blue-700 dark:text-blue-300 text-3xl mb-3">
-                        <i class="fas fa-file-code"></i>
-                    </div>
-                    <h3 class="font-semibold text-lg mb-2 text-gray-900 dark:text-gray-100">Basic Scripting</h3>
-                    <p class="text-gray-800 dark:text-gray-200 text-sm">Automating simple tasks with scripts</p>
-                </div>
-                
-                <div class="skill-card bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md border border-gray-200 dark:border-gray-600 transition-all duration-300">
-                    <div class="text-blue-700 dark:text-blue-300 text-3xl mb-3">
-                        <i class="fab fa-linux"></i>
-                    </div>
-                    <h3 class="font-semibold text-lg mb-2 text-gray-900 dark:text-gray-100">Linux Systems</h3>
-                    <p class="text-gray-800 dark:text-gray-200 text-sm">Working with Linux environments</p>
-                </div>
-                
-                <div class="skill-card bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md border border-gray-200 dark:border-gray-600 transition-all duration-300">
-                    <div class="text-blue-700 dark:text-blue-300 text-3xl mb-3">
-                        <i class="fas fa-comment-dots"></i>
-                    </div>
-                    <h3 class="font-semibold text-lg mb-2 text-gray-900 dark:text-gray-100">Technical Communication</h3>
-                    <p class="text-gray-800 dark:text-gray-200 text-sm">Translating tech concepts for users</p>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Dév. web & logiciels (bases)</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Notions acquises via ALX : logique, CLI, scripts, fondamentaux.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="py-20 bg-gray-100 dark:bg-gray-800">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-12 section-title">Experience & Education</h2>
-            
-            <div class="max-w-3xl mx-auto">
-                <!-- Current Job -->
-                <div class="relative pl-8 mb-12 timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
-                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
-                            <h3 class="text-xl font-bold">Tech Problem Solver</h3>
-                            <span class="text-blue-600 dark:text-blue-400 font-medium">2024 – Present</span>
-                        </div>
-                        <h4 class="text-lg font-semibold mb-2">TP (Top-tier Tech Ecosystem)</h4>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">
-                            Providing technical support for a leading tech ecosystem, troubleshooting complex issues, 
-                            and delivering clear solutions to users. Working in a fast-paced environment that demands 
-                            quick thinking and adaptability.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full text-sm">Technical Support</span>
-                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full text-sm">Problem Solving</span>
-                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full text-sm">Customer Service</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- University Degree -->
-                <div class="relative pl-8 mb-12 timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
-                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
-                            <h3 class="text-xl font-bold">Bachelor's Degree in Management</h3>
-<span class="text-blue-600 dark:text-blue-400 font-medium">2023</span>
-                        </div>
-                        <h4 class="text-lg font-semibold mb-2">University</h4>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">
-                            Completed a comprehensive 3-year program in management, gaining expertise in business operations,
-                            organizational behavior, and strategic planning. Developed strong analytical and decision-making
-                            skills applicable to technical support environments.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full text-sm">Business Management</span>
-                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full text-sm">Strategic Planning</span>
-                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full text-sm">Organizational Behavior</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ALX Training -->
-                <div class="relative pl-8 mb-12 timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
-                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
-                            <h3 class="text-xl font-bold">Software Engineering Training</h3>
-                            <span class="text-blue-600 dark:text-blue-400 font-medium">2022 – 2023</span>
-                        </div>
-                        <h4 class="text-lg font-semibold mb-2">ALX Africa</h4>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">
-                            Completed intensive training in software engineering fundamentals, including problem-solving 
-                            methodologies, command-line tools, and basic scripting. Developed a strong foundation in 
-                            technical thinking and collaborative work.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full text-sm">Linux</span>
-                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full text-sm">Command Line</span>
-                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full text-sm">Problem Solving</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Baccalaureate -->
-                <div class="relative pl-8 mb-12 timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
-                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
-                            <h3 class="text-xl font-bold">Baccalaureate</h3>
-<span class="text-blue-600 dark:text-blue-400 font-medium">2020 – Highest Honors</span>
-                        </div>
-                        <h4 class="text-lg font-semibold mb-2">High School</h4>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">
-                            Graduated with highest honors (Mention Très Bien), demonstrating exceptional academic achievement.
-                            This rigorous program laid the foundation for critical thinking and problem-solving skills that
-                            continue to benefit my technical support career.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full text-sm">Highest Honors</span>
-                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full text-sm">Academic Excellence</span>
-                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full text-sm">Critical Thinking</span>
-                        </div>
-                    </div>
-                </div>
+    <section id="experience" class="py-24 bg-gray-50 dark:bg-black">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="text-center mb-16">
+                <span class="inline-block bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-medium px-4 py-1.5 rounded-full mb-4">Parcours</span>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Expérience</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">Apple (via prestataire) — Juillet 2024 à Septembre 2025</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-12 section-title">Get In Touch</h2>
             
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="animate-fade-in">
-                    <h3 class="text-2xl font-semibold mb-6">Let's Connect</h3>
-                    <p class="text-lg mb-8 text-gray-600 dark:text-gray-300">
-                        Interested in discussing tech support opportunities or have questions about my experience? 
-                        Feel free to reach out through the form or connect with me on LinkedIn.
-                    </p>
-                    
-                    <div class="space-y-4">
-                        <div class="flex items-center">
-                            <div class="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-full mr-4">
-                                <i class="fas fa-envelope text-blue-600 dark:text-blue-400"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium">Email</h4>
-                                <p class="text-gray-600 dark:text-gray-400">ahmedbalamypro@gmail.com</p>
+            <div class="relative max-w-3xl mx-auto">
+                <!-- Expérience: Apple via prestataire -->
+                <div class="relative">
+                    <div class="md:flex items-center">
+                        <div class="md:w-1/2 md:pr-16 md:text-right">
+                            <div class="inline-block px-4 py-2 bg-blue-500 text-white text-sm font-medium rounded-full mb-2">Juil. 2024 – Sept. 2025</div>
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Assistance technique – Produits Apple</h3>
+                            <h4 class="text-lg text-blue-500 font-medium mb-3">Prestataire Apple</h4>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4">Suivi et dépannage des appareils Apple (iPhone, iPad, Mac, iMac, Mac mini). Diagnostic, accompagnement client, gestion des dossiers et des assurances, avec rigueur et autonomie.</p>
+                            <div class="flex flex-wrap gap-2 justify-end">
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-sm rounded-full text-gray-700 dark:text-gray-300">iPhone</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-sm rounded-full text-gray-700 dark:text-gray-300">iPad</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-sm rounded-full text-gray-700 dark:text-gray-300">macOS</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-sm rounded-full text-gray-700 dark:text-gray-300">Apple Diagnostics</span>
                             </div>
                         </div>
-                        
-                        <div class="flex items-center">
-                            <div class="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-full mr-4">
-                                <i class="fab fa-linkedin-in text-blue-600 dark:text-blue-400"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium">LinkedIn</h4>
-                                <a href="https://www.linkedin.com/in/ahmed-balamy10" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                                    linkedin.com/in/ahmed-balamy10
-                                </a>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-center">
-                            <div class="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-full mr-4">
-                                <i class="fas fa-map-marker-alt text-blue-600 dark:text-blue-400"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium">Location</h4>
-                                <p class="text-gray-600 dark:text-gray-400">Casablanca, Morocco</p>
-                            </div>
-                        </div>
+                        <div class="hidden md:block w-1/2"></div>
                     </div>
+                    <div class="absolute top-1/2 left-1/2 w-6 h-6 bg-blue-500 rounded-full transform -translate-x-1/2 -translate-y-1/2 border-4 border-white dark:border-gray-900"></div>
+                </div>
                 </div>
                 
-                <div class="animate-fade-in">
-                    <div class="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md text-center">
-    <div class="relative w-full h-56 mb-6 overflow-visible">
-        <div class="absolute left-1/2 top-2 -translate-x-1/2 flex flex-col items-center w-full">
-            <div class="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-400 animate-pulse drop-shadow-lg mb-1">
-    <i class="fas fa-user-astronaut text-blue-400 mr-2 animate-bounce"></i>Turning Curiosity Into Solutions! <i class="fas fa-rocket text-pink-400 ml-2 animate-pulse"></i>
-</div>
-            <div class="text-lg md:text-xl font-semibold text-blue-700 dark:text-blue-300 mb-2 animate-fade-in">
-    </div>
-</header>
-                                <i class="fab fa-linkedin-in mr-2"></i> LinkedIn
-                            </a>
+                <!-- Contact (Info only) -->
+                <div id="contact" class="bg-white dark:bg-gray-900 p-10 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm">
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-blue-500 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-900 dark:text-white">Ville</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Blanc-Mesnil, France</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center">
+                                <i class="fas fa-envelope text-blue-500 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-900 dark:text-white">Email</h4>
+                                <a href="mailto:ahmedbalamypro@gmail.com" class="text-blue-500 hover:underline">ahmedbalamypro@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center">
+                                <i class="fab fa-linkedin-in text-blue-500 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-900 dark:text-white">LinkedIn</h4>
+                                <a href="https://linkedin.com/in/ahmedbalamy" target="_blank" class="text-blue-500 hover:underline">linkedin.com/in/ahmedbalamy</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-gray-200 dark:bg-gray-800 flex items-center justify-center">
+                                <i class="fab fa-github text-gray-900 dark:text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-900 dark:text-white">GitHub</h4>
+                                <a href="https://github.com/balamy02" target="_blank" class="text-blue-500 hover:underline">github.com/balamy02</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-100 dark:bg-gray-800 py-12">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-6 md:mb-0">
-                    <a href="#" class="text-2xl font-bold special-flashy">Ahmed Balamy</a>
-                    <p class="text-gray-600 dark:text-gray-400 mt-2 italic genius-quote">“Turning ideas into code, one pixel at a time.”</p>
+    <footer class="bg-white dark:bg-black border-t border-gray-100 dark:border-gray-900 py-16">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+                <div class="md:col-span-4">
+                    <a href="#" class="text-2xl font-bold text-gray-900 dark:text-white">Ahmed Balamy</a>
+                    <p class="text-gray-600 dark:text-gray-400 mt-4 max-w-xs">
+                        Turning complex problems into elegant, user-friendly solutions through technology and innovation.
+                    </p>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="#" class="w-10 h-10 rounded-xl bg-gray-100 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800 flex items-center justify-center text-gray-700 dark:text-gray-300 transition-colors">
+                            <i class="fab fa-twitter text-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-xl bg-gray-100 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800 flex items-center justify-center text-gray-700 dark:text-gray-300 transition-colors">
+                            <i class="fab fa-github text-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-xl bg-gray-100 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800 flex items-center justify-center text-gray-700 dark:text-gray-300 transition-colors">
+                            <i class="fab fa-linkedin-in text-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-xl bg-gray-100 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800 flex items-center justify-center text-gray-700 dark:text-gray-300 transition-colors">
+                            <i class="fab fa-dribbble text-lg"></i>
+                        </a>
+                    </div>
                 </div>
                 
-                <div class="flex space-x-6">
-                    <a href="https://www.linkedin.com/in/ahmed-balamy10" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-xl">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://github.com/Balamy02" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors text-xl">
-                        <i class="fab fa-github"></i>
-                    </a>
+                <div class="md:col-span-2">
+                    <h4 class="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-4">Navigation</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors">Accueil</a></li>
+                        <li><a href="#about" class="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors">À propos</a></li>
+                        <li><a href="#experience" class="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors">Expérience</a></li>
+                        <li><a href="#education" class="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors">Éducation</a></li>
+                        <li><a href="#skills" class="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors">Compétences</a></li>
+                        <li><a href="#contact" class="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="md:col-span-3">
+                    <h4 class="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-4">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors">Web Development</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors">Mobile Development</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors">UI/UX Design</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors">Technical Consulting</a></li>
+                    </ul>
+                </div>
+                
+                <div class="md:col-span-3">
+                    <h4 class="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-4">Contact</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope text-blue-500 mt-1 mr-3"></i>
+                            <a href="mailto:ahmedbalamypro@gmail.com" class="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors">ahmedbalamypro@gmail.com</a>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-blue-500 mt-1 mr-3"></i>
+                            <span class="text-gray-600 dark:text-gray-400">Blanc-Mesnil, France</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
             
-            <div class="border-t border-gray-200 dark:border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="border-t border-gray-100 dark:border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-gray-500 dark:text-gray-500 text-sm mb-4 md:mb-0">
-                    &copy; <span id="year"></span> Ahmed Balamy. All rights reserved.
+                    &copy; <span id="year">2025</span> Ahmed Balamy. All rights reserved.
                 </p>
-                
                 <div class="flex space-x-6">
-                    <a href="#home" class="text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors text-sm">Home</a>
-                    <a href="#about" class="text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors text-sm">About</a>
-                    <a href="#skills" class="text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors text-sm">Skills</a>
-                    <a href="#experience" class="text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors text-sm">Experience</a>
-                    <a href="#contact" class="text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors text-sm">Contact</a>
-                    <a href="resume.html" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm" target="_blank">Resume</a>
+                    <a href="#" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 text-sm transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 text-sm transition-colors">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 text-sm transition-colors">Cookies</a>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- Cookie Notice (French) -->
+    <div id="cookie-notice" class="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white px-6 py-4 rounded-lg shadow-lg flex items-center space-x-4 z-50" style="display: none;">
+      <span>Ce site utilise des cookies pour améliorer votre expérience et analyser le trafic. En continuant à naviguer, vous acceptez notre utilisation des cookies.</span>
+      <button onclick="document.getElementById('cookie-notice').style.display='none'; localStorage.setItem('cookieNoticeAccepted','yes');" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        J’ai compris
+      </button>
+    </div>
     <script>
-        // Theme toggle
-        const themeToggle = document.getElementById('theme-toggle');
-        const html = document.documentElement;
-        
-        // Check for saved theme preference or use system preference
-        const savedTheme = localStorage.getItem('theme') || 
-                          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        html.classList.add(savedTheme);
-        
-        themeToggle.addEventListener('click', () => {
-            html.classList.toggle('dark');
-            const theme = html.classList.contains('dark') ? 'dark' : 'light';
-            localStorage.setItem('theme', theme);
-        });
-        
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-        
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-        
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Set current year in footer
-        document.getElementById('year').textContent = new Date().getFullYear();
-        
-        // Animation on scroll
-        const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.animate-fade-in');
-            
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.3;
-                
-                if (elementPosition < screenPosition) {
-                    element.style.opacity = '1';
-                }
-            });
-        };
-        
-        // Set initial opacity for animated elements
-        document.querySelectorAll('.animate-fade-in').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transition = 'opacity 0.6s ease-out';
-        });
-        
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
+      // Affiche la bannière de cookies si non acceptée
+      if (!localStorage.getItem('cookieNoticeAccepted')) {
+        document.getElementById('cookie-notice').style.display = 'flex';
+      }
     </script>
-<!-- Cookie Notice (French) -->
-<div id="cookie-notice" class="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white px-6 py-4 rounded-lg shadow-lg flex items-center space-x-4 z-50" style="display: none;">
-  <span>Ce site utilise des cookies pour améliorer votre expérience et analyser le trafic. En continuant à naviguer, vous acceptez notre utilisation des cookies.</span>
-  <button onclick="document.getElementById('cookie-notice').style.display='none'; localStorage.setItem('cookieNoticeAccepted','yes');" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-    J’ai compris
-  </button>
-</div>
-<script>
-  // Affiche la bannière de cookies si non acceptée
-  if (!localStorage.getItem('cookieNoticeAccepted')) {
-    document.getElementById('cookie-notice').style.display = 'flex';
-  }
-</script>
-  <script>
-    // Fade-in on scroll for all main sections
-    document.addEventListener('DOMContentLoaded', function() {
-      const animatedSections = document.querySelectorAll('section');
-      animatedSections.forEach(section => {
-        section.classList.add('opacity-0', 'translate-y-8', 'transition-all', 'duration-700');
-      });
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('opacity-100', 'translate-y-0');
-            entry.target.classList.remove('opacity-0', 'translate-y-8');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.15 });
-      animatedSections.forEach(section => {
-        observer.observe(section);
-      });
-    });
-  </script>
-  <script>
-    // Fade-in on scroll for all main sections
-    document.addEventListener('DOMContentLoaded', function() {
-      const animatedSections = document.querySelectorAll('section');
-      animatedSections.forEach(section => {
-        section.classList.add('opacity-0', 'translate-y-8', 'transition-all', 'duration-700');
-      });
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('opacity-100', 'translate-y-0');
-            entry.target.classList.remove('opacity-0', 'translate-y-8');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.15 });
-      animatedSections.forEach(section => {
-        observer.observe(section);
-      });
-
-      // Navbar active link highlight on scroll
-      const navLinks = document.querySelectorAll('.nav-link');
-      const sectionIds = Array.from(navLinks).map(link => link.getAttribute('href')).filter(href => href.startsWith('#'));
-      const sectionElements = sectionIds.map(id => document.querySelector(id));
-      function setActiveLink() {
-        let scrollPos = window.scrollY + 120;
-        let activeIdx = 0;
-        sectionElements.forEach((section, i) => {
-          if (section && section.offsetTop <= scrollPos) {
-            activeIdx = i;
-          }
-        });
-        navLinks.forEach((link, i) => {
-          link.classList.toggle('active', i === activeIdx);
-        });
-      }
-      window.addEventListener('scroll', setActiveLink);
-      setActiveLink();
-    });
-  </script>
-  <script>
-    // Hide navbar on scroll down, show on scroll up
-    let lastScrollTop = 0;
-    const navbar = document.querySelector('header');
-    window.addEventListener('scroll', function() {
-      let scrollTop = window.scrollY || document.documentElement.scrollTop;
-      if(scrollTop > lastScrollTop && scrollTop > 80) {
-        navbar.style.transform = 'translateY(-120%)';
-        navbar.style.transition = 'transform 0.4s cubic-bezier(.4,2,.6,1)';
-      } else {
-        navbar.style.transform = 'translateY(0)';
-        navbar.style.transition = 'transform 0.4s cubic-bezier(.4,2,.6,1)';
-      }
-      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-    });
-  </script>
-<noscript><div style="background:#fffae6;color:#b91c1c;padding:16px;text-align:center;position:fixed;top:0;left:0;width:100%;z-index:9999;">JavaScript is required for full site functionality. Please enable JS in your browser.</div></noscript>
-<script>
-// Navbar show/hide logic: only show full navbar at top, only theme/hamburger on scroll
-(function() {
-  try {
-    const navbarMain = document.getElementById('navbar-main');
-    let lastScrollY = window.scrollY;
-    function handleNavbar() {
-      if(window.scrollY <= 0) {
-        navbarMain.style.opacity = '1';
-        navbarMain.style.pointerEvents = 'auto';
-        navbarMain.style.transform = 'translateY(0)';
-      } else {
-        navbarMain.style.opacity = '0';
-        navbarMain.style.pointerEvents = 'none';
-        navbarMain.style.transform = 'translateY(-32px)';
-      }
-    }
-    window.addEventListener('scroll', handleNavbar);
-    window.addEventListener('load', handleNavbar);
-  } catch(e) { console.error('Navbar JS error:', e); }
-})();
-// Improved mobile menu toggle: menu is hidden by default, overlays only on click, closes on link click
-(function() {
-  try {
-    var mobileMenuButton = document.getElementById('mobile-menu-button');
-    var mobileMenu = document.getElementById('mobile-menu');
-    if (mobileMenuButton && mobileMenu) {
-      mobileMenuButton.addEventListener('click', function() {
-        mobileMenu.classList.toggle('hidden');
-        if (!mobileMenu.classList.contains('hidden')) {
-          mobileMenu.style.transform = 'translateY(0)';
-        } else {
-          mobileMenu.style.transform = 'translateY(100%)';
-        }
-      });
-      document.querySelectorAll('#mobile-menu a').forEach(function(link) {
-        link.addEventListener('click', function() {
-          mobileMenu.classList.add('hidden');
-          mobileMenu.style.transform = 'translateY(100%)';
-        });
-      });
-      // On load, always hide menu
-      mobileMenu.classList.add('hidden');
-      mobileMenu.style.transform = 'translateY(100%)';
-    }
-  } catch(e) { console.error('Mobile menu JS error:', e); }
-})();
-</script>
-<script>
-(function() {
-  var mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-  var mobileMenuDropdown = document.getElementById('mobile-menu-dropdown');
-  var mobileMenuClose = document.getElementById('mobile-menu-close');
-  if (mobileMenuToggle && mobileMenuDropdown) {
-    mobileMenuToggle.addEventListener('click', function() {
-      mobileMenuDropdown.classList.remove('hidden');
-      mobileMenuDropdown.style.transform = 'translateY(0)';
-    });
-    if (mobileMenuClose) {
-      mobileMenuClose.addEventListener('click', function() {
-        mobileMenuDropdown.style.transform = 'translateY(100%)';
-        setTimeout(function(){ mobileMenuDropdown.classList.add('hidden'); }, 300);
-      });
-    }
-    // Close menu when any link is clicked
-    mobileMenuDropdown.querySelectorAll('a').forEach(function(link) {
-      link.addEventListener('click', function() {
-        mobileMenuDropdown.style.transform = 'translateY(100%)';
-        setTimeout(function(){ mobileMenuDropdown.classList.add('hidden'); }, 300);
-      });
-    });
-    // Hide menu by default
-    mobileMenuDropdown.classList.add('hidden');
-    mobileMenuDropdown.style.transform = 'translateY(100%)';
-  }
-})();
-</script>
+    
+    <!-- Main JS -->
+    <script src="js/main.js"></script>
 </body>
 </html>
