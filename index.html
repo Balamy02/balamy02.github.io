@@ -51,6 +51,15 @@
         },
       }
     </script>
+    <style>
+      /* During theme switch, disable expensive transitions/animations to avoid iOS lag */
+      .theme-switching *,
+      .theme-switching *::before,
+      .theme-switching *::after {
+        transition: none !important;
+        animation: none !important;
+      }
+    </style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MT4KMLTYT6"></script>
     <script>
@@ -537,6 +546,30 @@
             });
           }
         } catch(e) { /* noop */ }
+      })();
+    </script>
+    <script>
+      // Smooth theme toggle: temporarily disable transitions/animations on iOS
+      (function(){
+        try {
+          var html = document.documentElement;
+          var btn = document.getElementById('theme-toggle');
+          function dampen() {
+            html.classList.add('theme-switching');
+            setTimeout(function(){ html.classList.remove('theme-switching'); }, 250);
+          }
+          if (btn) btn.addEventListener('click', dampen, { passive: true });
+          // Also observe class changes for dark toggle coming from other scripts
+          var prevDark = html.classList.contains('dark');
+          var obs = new MutationObserver(function(){
+            var nowDark = html.classList.contains('dark');
+            if (nowDark !== prevDark) {
+              prevDark = nowDark;
+              dampen();
+            }
+          });
+          obs.observe(html, { attributes: true, attributeFilter: ['class'] });
+        } catch(e) {}
       })();
     </script>
     <style>
