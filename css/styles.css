@@ -244,6 +244,40 @@ section {
   animation: fadeIn 0.6s ease-out forwards;
 }
 
+/* Scroll Reveal (IntersectionObserver) */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Navbar shrink on scroll */
+#navbar-main.nav-shrink {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+#navbar-main.nav-shrink .container {
+  padding-top: 0.35rem !important;
+  padding-bottom: 0.35rem !important;
+}
+
+/* Scroll progress bar */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  z-index: 9999;
+  background: linear-gradient(90deg, #2563eb, #7c3aed, #06b6d4);
+  box-shadow: 0 0 8px #7c3aed66;
+  transform-origin: 0 0;
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   h1 {

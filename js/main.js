@@ -67,25 +67,58 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  // Animation au défilement
-  const animateOnScroll = function() {
-    const elements = document.querySelectorAll('.animate-on-scroll');
-    
-    elements.forEach(element => {
-      const elementPosition = element.getBoundingClientRect().top;
-      const screenPosition = window.innerHeight / 1.3;
-      
-      if (elementPosition < screenPosition) {
-        element.classList.add('animate-fade-in');
+  // Animation au défilement (IntersectionObserver)
+  (function setupReveal(){
+    try {
+      // Préparer les éléments à révéler
+      const candidates = document.querySelectorAll('.animate-on-scroll, [data-reveal], .card, .group');
+      candidates.forEach(el => el.classList.add('reveal'));
+
+      const io = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            entry.target.classList.add('animate-fade-in');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
+
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    } catch(e) { /* noop */ }
+  })();
+
+  // Navbar shrink + Progress bar
+  (function setupScrollUI(){
+    try {
+      const navbar = document.getElementById('navbar-main');
+      // Inject progress bar
+      let progress = document.getElementById('scroll-progress');
+      if (!progress) {
+        progress = document.createElement('div');
+        progress.id = 'scroll-progress';
+        document.body.appendChild(progress);
       }
-    });
-  };
-  
-  // Écouter l'événement de défilement
-  window.addEventListener('scroll', animateOnScroll);
-  
-  // Lancer une première fois au chargement de la page
-  animateOnScroll();
+
+      function onScroll() {
+        const y = window.scrollY || window.pageYOffset;
+        if (navbar) {
+          if (y > 8) navbar.classList.add('nav-shrink'); else navbar.classList.remove('nav-shrink');
+        }
+        const doc = document.documentElement;
+        const scrollTop = doc.scrollTop || document.body.scrollTop;
+        const scrollHeight = doc.scrollHeight || document.body.scrollHeight;
+        const clientHeight = doc.clientHeight;
+        const max = Math.max(scrollHeight - clientHeight, 1);
+        const ratio = Math.min(1, Math.max(0, scrollTop / max));
+        // Use transform for better perf
+        progress.style.width = (ratio * 100) + '%';
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    } catch(e) { /* noop */ }
+  })();
   
   // Lisser le défilement pour les liens d'ancrage
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -180,13 +213,4 @@ if ('loading' in HTMLImageElement.prototype) {
   document.body.appendChild(script);
 }
 
-// Animation fluide au défilement
-function smoothScroll() {
-  const currentScroll = window.pageYOffset;
-  
-  window.requestAnimationFrame(() => {
-    window.scrollTo(0, currentScroll);
-  });
-}
-
-window.addEventListener('scroll', smoothScroll);
+// (supprimé) Ancienne animation de défilement non nécessaire
