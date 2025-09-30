@@ -92,6 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
   (function setupScrollUI(){
     try {
       const navbar = document.getElementById('navbar-main');
+      const backToTop = document.getElementById('back-to-top');
       // Inject progress bar
       let progress = document.getElementById('scroll-progress');
       if (!progress) {
@@ -105,6 +106,10 @@ document.addEventListener('DOMContentLoaded', function() {
         if (navbar) {
           if (y > 8) navbar.classList.add('nav-shrink'); else navbar.classList.remove('nav-shrink');
         }
+        // Toggle back-to-top
+        if (backToTop) {
+          if (y > 300) backToTop.classList.add('show'); else backToTop.classList.remove('show');
+        }
         const doc = document.documentElement;
         const scrollTop = doc.scrollTop || document.body.scrollTop;
         const scrollHeight = doc.scrollHeight || document.body.scrollHeight;
@@ -117,6 +122,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
       window.addEventListener('scroll', onScroll, { passive: true });
       onScroll();
+
+      // Back-to-top click handler
+      if (backToTop) {
+        backToTop.addEventListener('click', function(){
+          try {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          } catch(e) {
+            // fallback
+            document.documentElement.scrollTop = 0; document.body.scrollTop = 0;
+          }
+        });
+      }
     } catch(e) { /* noop */ }
   })();
   
@@ -147,17 +164,16 @@ document.addEventListener('DOMContentLoaded', function() {
   if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
-      
-      // Récupérer les données du formulaire
-      const formData = new FormData(contactForm);
-      const formObject = Object.fromEntries(formData.entries());
-      
-      // Ici, vous pouvez ajouter le code pour envoyer les données à votre serveur
-      console.log('Formulaire soumis:', formObject);
-      
-      // Afficher un message de succès
-      alert('Merci pour votre message ! Je vous répondrai dès que possible.');
-      contactForm.reset();
+      const fd = new FormData(contactForm);
+      const name = (fd.get('name') || '').toString().trim();
+      const email = (fd.get('email') || '').toString().trim();
+      const message = (fd.get('message') || '').toString().trim();
+      const to = contactForm.dataset.to || 'ahmedbalamypro@gmail.com';
+      const subject = encodeURIComponent(`[Portfolio] Message from ${name || 'Visitor'}`);
+      const body = encodeURIComponent(`${message}\n\nFrom: ${name}${email ? ` <${email}>` : ''}`);
+      const mailto = `mailto:${to}?subject=${subject}&body=${body}`;
+      try { window.location.href = mailto; } catch(_) {}
+      setTimeout(() => { contactForm.reset(); }, 200);
     });
   }
   

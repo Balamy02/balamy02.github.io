@@ -5,9 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ahmed Balamy | Tech Problem Solver</title>
     <meta name="description" content="Ahmed Balamy - Tech Problem Solver & Digital Enthusiast. Creating elegant solutions to complex problems.">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Ahmed Balamy | Tech Problem Solver">
+    <meta property="og:description" content="Transformer la complexité en solutions élégantes et utiles.">
+    <meta property="og:url" content="https://balamy02.github.io/">
+    <meta property="og:site_name" content="Ahmed Balamy">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Ahmed Balamy | Tech Problem Solver">
+    <meta name="twitter:description" content="Transformer la complexité en solutions élégantes et utiles.">
+    <link rel="canonical" href="https://balamy02.github.io/">
+    <link rel="alternate" hreflang="fr" href="https://balamy02.github.io/fr.html">
+    <link rel="alternate" hreflang="en" href="https://balamy02.github.io/en.html">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -368,8 +381,9 @@
 /* --- END VALID CSS --- */
 </style>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
-</head>
+ </head>
 <body class="bg-white dark:bg-black text-gray-900 dark:text-gray-100 antialiased">
+    <a href="#main-content" class="skip-to-content">Aller au contenu</a>
     <!-- Language selection overlay -->
     <div id="lang-overlay" class="fixed inset-0 z-[9999] flex items-center justify-center bg-white dark:bg-black" role="dialog" aria-modal="true" aria-label="Language selection">
       <div class="text-center p-10 rounded-3xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-2xl w-[min(92vw,720px)] mx-auto">
@@ -587,7 +601,7 @@
       }
     </style>
     <!-- Navigation -->
-    <nav id="navbar-main" class="fixed w-full bg-white/80 dark:bg-black/80 backdrop-blur-md z-50 border-b border-gray-100 dark:border-gray-900">
+    <nav id="navbar-main" class="fixed w-full bg-white/80 dark:bg-black/80 backdrop-blur-md z-50 border-b border-gray-100 dark:border-gray-900" role="navigation" aria-label="Principal">
         <div class="container mx-auto px-6 py-3">
             <div class="flex items-center justify-between">
                 <a href="#" class="text-xl font-semibold tracking-tight">Ahmed Balamy</a>
@@ -636,7 +650,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="min-h-screen flex items-center pt-16 pb-20">
+    <section id="main-content" class="min-h-screen flex items-center pt-16 pb-20">
         <div class="container mx-auto px-6">
             <div class="flex flex-col lg:flex-row items-center justify-between">
                 <div class="lg:w-1/2 mb-16 lg:mb-0 lg:pr-12">
@@ -883,6 +897,10 @@
             </div>
         </div>
     </footer>
+    
+    <button id="back-to-top" aria-label="Haut de page" title="Haut de page">
+      <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
     
     <!-- Main JS -->
     <script src="js/main.js"></script>
